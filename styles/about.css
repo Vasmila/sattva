@@ -1,0 +1,442 @@
+/* ========== HERO СЕКЦИЯ ========== */
+.services-hero-outer {
+    background-image: url('../img/bg-about.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 40px;
+    border-radius: 32px;
+    position: relative;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 768px) {
+    .services-hero-outer {
+        margin: 16px;
+        margin-bottom: 16px;
+        border-radius: 24px;
+        height: 350px;
+        background: #2C4A61;
+    }
+}
+
+/* Заголовок по центру */
+.services-hero-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 115px;
+    text-align: left;
+}
+@media (max-width: 768px) {
+    .services-hero-title {
+        padding-left: 0px;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+.hero_page {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 120px;
+}
+
+/* ========== БЛОК С ТЕКСТОМ (ШИРИНА 900, ПРИЖАТ К ПРАВОМУ КРАЮ) ========== */
+.about-text-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 56px;
+}
+
+@media (max-width: 768px) {
+    .about-text-wrapper {
+        margin-bottom: 32px;
+    }
+}
+
+.about-text {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 24px;
+    width: 900px;
+    max-width: 100%;
+    text-align: left;
+}
+
+
+@media (max-width: 768px) {
+    .about-text {
+        font-size: 20px;
+    }
+}
+
+/* ========== 3 КВАДРАТНЫЕ КАРТИНКИ (СКРОЛЛ НА МОБИЛЬНОЙ) ========== */
+.about-gallery-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 64px;
+}
+
+@media (max-width: 768px) {
+    .about-gallery-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding: 0 16px;
+        margin-bottom: 60px;
+        scrollbar-width: none;
+    }
+    
+    .about-gallery-container::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.about-gallery-item {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 32px;
+}
+
+@media (max-width: 768px) {
+    .about-gallery-item {
+        min-width: 224px;
+        height: 224px;
+        scroll-snap-align: start;
+        border-radius: 16px;
+    }
+}
+
+.about-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.about-gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ========== БЛОК ТЕКСТ + КАРТИНКА ========== */
+.about-feature-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .about-feature-container {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 0px;
+        align-items: baseline;
+    }
+}
+
+.about-feature-text {
+    grid-column: 1 / 8;
+}
+
+/* Кнопка */
+.master-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 32px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .master-btn {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.master-btn span {
+    font-family: 'GilroySemibold', sans-serif;
+    font-size: 24px;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+.master-btn:hover span {
+    color: #6A8366;
+}
+
+/* Стрелка */
+.service-large-arrow {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    min-width: 120px;
+}
+
+.service-large-arrow-line {
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.service-large-arrow-fork {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 30px;
+}
+
+.service-large-arrow-fork::before,
+.service-large-arrow-fork::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 24px;
+    background-color: #000000;
+    right: 0;
+    transition: background-color 0.3s ease;
+}
+
+.service-large-arrow-fork::before {
+    transform: rotate(-45deg);
+    top: -5px;
+    right: 8px;
+}
+
+.service-large-arrow-fork::after {
+    transform: rotate(45deg);
+    bottom: -5px;
+    right: 8px;
+}
+
+.master-btn:hover .service-large-arrow-line {
+    background-color: #6A8366;
+}
+
+.master-btn:hover .service-large-arrow-fork::before,
+.master-btn:hover .service-large-arrow-fork::after {
+    background-color: #6A8366;
+}
+
+/* Картинка - с 9 по 12 колонки */
+.about-feature-image {
+    grid-column: 9 / 13;
+    overflow: hidden;
+    border-radius: 32px;
+    aspect-ratio: 1 / 1;
+}
+
+@media (max-width: 768px) {
+    .about-feature-image {
+        width: 224px;
+        border-radius: 16px;
+    }
+}
+
+.about-feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.about-feature-image:hover img {
+    transform: scale(1.05);
+}
+
+/* ========== СЕКЦИЯ 2: ДВА РАВНЫХ БЛОКА ========== */
+.about-two-blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 64px;
+    align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+    .about-two-blocks {
+        grid-template-columns: 1fr;
+        gap: 0px;
+        margin-bottom: 40px;
+    }
+}
+
+.about-two-blocks-left {
+    padding-right: 40px;
+}
+
+@media (max-width: 768px) {
+    .about-two-blocks-left {
+        padding-right: 0;
+    }
+}
+
+.about-two-blocks-left h3 {
+    margin: 0 0 32px 0;
+}
+
+
+
+/* ========== СЕКЦИЯ 3: ДВА ИЗОБРАЖЕНИЯ ========== */
+.about-double-image {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+    grid-auto-rows: minmax(0, 1fr);
+}
+
+
+@media (max-width: 768px) {
+    .about-double-image {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding: 0 16px;
+        margin-bottom: 60px;
+        scrollbar-width: none;
+    }
+    
+    .about-double-image::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.about-double-image-large {
+    overflow: hidden;
+    border-radius: 32px;
+    width: 100%;
+}
+
+.about-double-image-small {
+    overflow: hidden;
+    border-radius: 32px;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+}
+
+ @media (max-width: 768px) {
+    
+    .about-double-image {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding: 0 16px;
+        margin-bottom: 16px;
+        scrollbar-width: none;
+    }
+    
+    .about-double-image::-webkit-scrollbar {
+        display: none;
+    }
+    .about-double-image-large {
+        min-width: 224px;
+        height: 224px;
+        scroll-snap-align: start;
+        aspect-ratio: auto;
+        border-radius: 16px;
+    }
+    
+    .about-double-image-small {
+        min-width: 224px;
+        height: 224px;
+        scroll-snap-align: start;
+        aspect-ratio: auto;
+        border-radius: 16px;
+    }
+}
+
+
+
+.about-double-image-large img,
+.about-double-image-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.about-double-image-large:hover img,
+.about-double-image-small:hover img {
+    transform: scale(1.05);
+}
+
+
+/* ========== СЕКЦИЯ 4: ИЗОБРАЖЕНИЕ + ФРАЗА ========== */
+.about-feature-container2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .about-feature-container2 {
+        grid-template-columns: 1fr;
+        gap: 56px;
+        
+    }
+}
+
+.about-feature-image2 {
+    overflow: hidden;
+    border-radius: 32px;
+    aspect-ratio: 1 / 1;
+}
+
+@media (max-width: 768px) {
+    .about-feature-image2 {
+        width: 100%;
+        max-width: 224px;
+        margin: 0 auto;
+        border-radius: 16px;
+    }
+}
+
+.about-feature-image2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.about-feature-image2:hover img {
+    transform: scale(1.05);
+}
+
+.about-feature-frase {
+    font-family: 'GilroyItalic', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    color: #2C3E2B;
+    line-height: 1.3;
+}
+
+
+@media (max-width: 768px) {
+    .about-feature-frase {
+        font-size: 24px;
+    }
+}

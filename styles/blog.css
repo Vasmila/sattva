@@ -1,0 +1,941 @@
+/* ========== HERO СЕКЦИЯ ========== */
+.services-hero-outer {
+    background-image: url('../img/bg-blog.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 40px;
+    border-radius: 32px;
+    position: relative;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 768px) {
+    .services-hero-outer {
+        margin: 16px;
+        margin-bottom: 16px;
+        border-radius: 24px;
+        height: 350px;
+        background: #974315;
+    }
+}
+
+/* Заголовок по центру */
+.services-hero-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 115px;
+    text-align: left;
+}
+@media (max-width: 768px) {
+    .services-hero-title {
+        padding-left: 0px;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+.hero_page {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 120px;
+}
+@media (max-width: 768px) {
+    .hero_page {
+        margin-bottom: 64px;
+    }
+}
+
+
+/* ========== БЛОК С ТЕКСТОМ (ШИРИНА 900, ПРИЖАТ К ПРАВОМУ КРАЮ) ========== */
+.about-text-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 56px;
+}
+
+@media (max-width: 768px) {
+    .about-text-wrapper {
+        margin-bottom: 32px;
+    }
+}
+
+.about-text {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 24px;
+    width: 900px;
+    max-width: 100%;
+    text-align: left;
+}
+
+
+@media (max-width: 768px) {
+    .about-text {
+        font-size: 20px;
+    }
+}
+
+
+/* ========== ФИЛЬТРЫ ========== */
+.blog-filters {
+    padding-bottom: 72px;
+    background-color: #ECF0E1;
+}
+
+.blog-filters-container {
+    margin: 0 auto;
+    display: flex;
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .blog-filters {
+        padding-bottom: 56px;
+    }
+    
+    
+    .blog-filters-container::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.blog-filter-btn {
+    background-color: #D5DBC6;
+    border: none;
+    font-family: 'GilroyMedium', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+    padding: 8px 32px;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.blog-filter-btn:hover {
+    transform: translateY(-2px);
+}
+
+.blog-filter-btn.active {
+    background-color: #6A8366;
+    color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .blog-filter-btn {
+        font-size: 16px;
+        padding: 6px 24px;
+    }
+}
+
+/* ========== КАРТОЧКИ БЛОГА ========== */
+/* ========== ОБЩИЕ СТИЛИ ДЛЯ КНОПОК ЧИТАТЬ ДАЛЕЕ ========== */
+.read-more-btn,
+.read-more-btn-alt,
+.read-more-btn-bg {
+    background-color: transparent;
+    border: none;
+    font-family: 'GilroyMedium', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 12px 0 0 0;
+    margin-top: 8px;
+    text-align: left;
+    transition: color 0.3s ease;
+    display: none;
+}
+
+.read-more-btn {
+    color: #000000;
+}
+.read-more-btn-alt,
+.read-more-btn-bg {
+    color: #ffffff;
+}
+.read-more-btn:hover,
+.read-more-btn-bg:hover,
+.read-more-btn-alt:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .read-more-btn,
+    .read-more-btn-alt,
+    .read-more-btn-bg {
+        display: inline-block;
+    }
+}
+
+/* Стили для скрытия текста на мобильной версии */
+@media (max-width: 768px) {
+    .blog-card-text.collapsed,
+    .blog-card-alt-text.collapsed {
+        max-height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .blog-card-text.collapsed::after,
+    .blog-card-alt-text.collapsed::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        background: linear-gradient(to bottom, transparent, #ECF0E1);
+        pointer-events: none;
+    }
+    
+    .blog-card-alt-text.collapsed::after {
+        background: linear-gradient(to bottom, transparent, #FFFFFF);
+    }
+    
+    .blog-card-text.expanded,
+    .blog-card-alt-text.expanded {
+        max-height: none;
+        overflow: visible;
+    }
+    
+    .blog-card-text.expanded::after,
+    .blog-card-alt-text.expanded::after {
+        display: none;
+    }
+}
+
+
+/* ========== ПЕРВЫЙ ВАРИАНТ КАРТОЧКИ ========== */
+.blog-card {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-bottom: 72px;
+}
+
+.blog-card:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+    .blog-card {
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-card {
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Картинка - 1 колонка (квадрат) */
+.blog-card-image {
+    grid-column: span 3;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 32px;
+}
+
+@media (max-width: 1440px) {
+    .blog-card-image {
+        grid-column: span 4;
+    }
+}
+@media (max-width: 1024px) {
+    .blog-card-image {
+        aspect-ratio: 1 / 1.5;
+    }
+}
+@media (max-width: 768px) {
+    .blog-card-image {
+        width: 100%;
+        height: 200px;
+        /* aspect-ratio: 2 / 1; */
+        border-radius: 16px;
+    }
+}
+
+.blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-card-image img {
+    transform: scale(1.05);
+}
+
+/* Контент - 2 колонки */
+.blog-card-content {
+    grid-column: span 9;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1440px) {
+    .blog-card-content {
+        grid-column: span 8;
+    }
+}
+
+/* Обертка для текста с кнопкой */
+.blog-card-text-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Заголовок */
+.blog-card-title {
+    margin: 24px 0 40px 0;
+}
+
+/* Текст - две колонки */
+.blog-card-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .blog-card-text {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .blog-card-text.expanded {
+        max-height: none;
+        overflow: visible;
+    }
+    
+    .blog-card-text.collapsed::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        background: linear-gradient(to bottom, transparent, #ECF0E1);
+        pointer-events: none;
+    }
+}
+
+/* .blog-card-text p {
+    margin: 0;
+} */
+
+/* ========== ВТОРОЙ ВАРИАНТ КАРТОЧКИ (С ФОНОМ И КНОПКОЙ) ========== */
+.blog-card-alt {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-bottom: 72px;
+    background-color: #2C4A61;
+    border-radius: 32px;
+    padding: 24px;
+}
+
+.blog-card-alt:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+    .blog-card-alt {
+        margin-bottom: 60px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-card-alt {
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 24px;
+    }
+}
+
+/* Картинка - ширина 384px */
+.blog-card-alt-image {
+    grid-column: span 3;
+    /* width: 384px; */
+    /* aspect-ratio: 1 / 1; */
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+@media (max-width: 1440px) {
+    .blog-card-alt-image {
+        grid-column: span 4;
+        width: 100%;
+    }
+}
+
+/* @media (max-width: 1024px) {
+    .blog-card-alt-image {
+        aspect-ratio: 1 / 1;
+    }
+} */
+
+@media (max-width: 768px) {
+    .blog-card-alt-image {
+        width: 100%;
+        height: 200px;
+        /* aspect-ratio: 2 / 1; */
+        border-radius: 16px;
+    }
+}
+
+.blog-card-alt-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    
+}
+
+.blog-card-alt:hover .blog-card-alt-image img {
+    transform: scale(1.05);
+}
+
+/* Контент */
+.blog-card-alt-content {
+    grid-column: span 9;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1440px) {
+    .blog-card-alt-content {
+        grid-column: span 8;
+    }
+}
+
+/* Обертка для текста с кнопкой */
+.blog-card-alt-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+/* Заголовок */
+.blog-card-alt-title {
+    /* font-family: 'ChampagneLimousines', sans-serif;
+    font-size: 28px;
+    font-weight: 900; */
+    color: #ffffff;
+    margin: 0 0 24px 0;
+    margin: 24px 0 40px 0;
+    /* line-height: 1.3; */
+}
+
+@media (max-width: 1024px) {
+    .blog-card-alt-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-card-alt-title {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+}
+
+/* Текст - две колонки */
+.blog-card-alt-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .blog-card-alt-text {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .blog-card-alt-text.expanded {
+        max-height: none;
+        overflow: visible;
+    }
+    
+    .blog-card-alt-text.collapsed::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        background: linear-gradient(to bottom, transparent, #2C4A61);
+        pointer-events: none;
+    }
+}
+
+.blog-card-alt-text p {
+    /* font-family: 'Gilroy', sans-serif;
+    font-size: 16px;
+    line-height: 1.6; */
+    color: #ffffff;
+    margin: 0;
+}
+
+/* @media (max-width: 1024px) {
+    .blog-card-alt-text p {
+        font-size: 14px;
+    }
+} */
+
+/* Кнопка на всю ширину (большая) */
+/* .blog-card-alt-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background-color: #6A8366;
+    border: none;
+    border-radius: 48px;
+    padding: 16px 24px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.blog-card-alt-btn:hover {
+    background-color: #2C3E2B;
+    transform: translateY(-2px);
+}
+
+.blog-card-alt-btn span {
+    font-family: 'GilroyMedium', sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+} */
+
+/* Кнопка */
+.master-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 32px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .master-btn {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.master-btn span {
+    font-family: 'GilroySemibold', sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+@media (max-width: 768px) {
+    .master-btn {
+        margin-top: 0px;
+    }
+
+    .master-btn span {
+        /* font-family: 'GilroySemibold', sans-serif; */
+        font-size: 20px;
+        /* color: #ffffff;
+        transition: color 0.3s ease; */
+    }
+}
+
+.master-btn:hover span {
+    color: #D5DBC6;
+}
+
+/* Стрелка */
+.service-large-arrow {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    min-width: 120px;
+}
+
+.service-large-arrow-line {
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.service-large-arrow-fork {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 30px;
+}
+
+.service-large-arrow-fork::before,
+.service-large-arrow-fork::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 24px;
+    background-color: #ffffff;
+    right: 0;
+    transition: background-color 0.3s ease;
+}
+
+.service-large-arrow-fork::before {
+    transform: rotate(-45deg);
+    top: -5px;
+    right: 8px;
+}
+
+.service-large-arrow-fork::after {
+    transform: rotate(45deg);
+    bottom: -5px;
+    right: 8px;
+}
+
+.master-btn:hover .service-large-arrow-line {
+    background-color: #D5DBC6;
+}
+
+.master-btn:hover .service-large-arrow-fork::before,
+.master-btn:hover .service-large-arrow-fork::after {
+    background-color: #D5DBC6;
+}
+
+
+/* Стрелка в большой кнопке */
+.blog-card-alt-arrow {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-card-alt-arrow-line {
+    width: 20px;
+    height: 1px;
+    background-color: #FFFFFF;
+    position: absolute;
+    right: 0;
+}
+
+.blog-card-alt-arrow-fork {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 20px;
+}
+
+.blog-card-alt-arrow-fork::before,
+.blog-card-alt-arrow-fork::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 10px;
+    background-color: #FFFFFF;
+    right: 0;
+}
+
+.blog-card-alt-arrow-fork::before {
+    transform: rotate(-45deg);
+    top: -2px;
+    right: 2px;
+}
+
+.blog-card-alt-arrow-fork::after {
+    transform: rotate(45deg);
+    bottom: -2px;
+    right: 2px;
+}
+
+
+/* ========== ТРЕТИЙ ВАРИАНТ КАРТОЧКИ (С ФОНОВЫМ ИЗОБРАЖЕНИЕМ) ========== */
+.blog-card-bg {
+    position: relative;
+    background-image: url('../img/blog4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 32px;
+    margin-bottom: 72px;
+    overflow: hidden;
+}
+
+.blog-card-bg:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .blog-card-bg {
+        margin-bottom: 40px;
+        border-radius: 24px;
+    }
+}
+
+/* Затемнение фона */
+/* .blog-card-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+} */
+
+/* Контент поверх затемнения */
+.blog-card-bg-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+    .blog-card-bg-content {
+        padding: 24px;
+        /* min-height: 350px; */
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-card-bg-content {
+        padding: 16px;
+        min-height: auto;
+        gap: 24px;
+    }
+}
+
+/* Заголовок */
+.blog-card-bg-title {
+    /* font-family: 'ChampagneLimousines', sans-serif;
+    font-size: 40px;
+    font-weight: 900; */
+    color: #FFFFFF;
+    /* margin: 0 0 40px 0;
+    line-height: 1.3;
+    max-width: 70%; */
+}
+
+/* @media (max-width: 1024px) {
+    .blog-card-bg-title {
+        font-size: 32px;
+        max-width: 80%;
+        margin-bottom: 30px;
+    }
+} */
+
+@media (max-width: 768px) {
+    .blog-card-bg-title {
+        /* max-width: 100%; */
+        margin-bottom: 20px;
+    }
+}
+
+/* Нижний блок - 12 колонок */
+.blog-card-bg-bottom {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+    .blog-card-bg-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+}
+
+/* Текстовая часть - 7 колонок */
+.blog-card-bg-text-wrapper {
+    grid-column: span 7;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .blog-card-bg-text-wrapper {
+        width: 100%;
+    }
+}
+
+.blog-card-bg-text {
+    color: #FFFFFF;
+}
+
+/* .blog-card-bg-text p {
+    margin: 0 0 16px 0;
+} */
+
+/* .blog-card-bg-text p:last-child {
+    margin-bottom: 0;
+} */
+
+@media (max-width: 768px) {
+    .blog-card-bg-text {
+        max-height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .blog-card-bg-text.collapsed {
+        max-height: 200px;
+        overflow: hidden;
+    }
+    
+    .blog-card-bg-text.expanded {
+        max-height: none;
+        overflow: visible;
+    }
+    
+    .blog-card-bg-text.collapsed::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+        pointer-events: none;
+    }
+}
+
+
+
+
+/* Кнопка - 5 колонок, выравнивание по низу */
+.blog-card-bg-btn {
+    grid-column: span 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    /* background-color: #FFFFFF; */
+    border: none;
+    border-radius: 48px;
+    /* padding: 16px 24px; */
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+
+.blog-card-bg-btn span {
+    font-family: 'GilroySemibold', sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+@media (max-width: 768px) {
+    .blog-card-bg-btn {
+        margin-top: 24px;
+
+    }
+    .blog-card-bg-btn span {
+        /* font-family: 'GilroySemibold', sans-serif; */
+        font-size: 20px;
+        /* color: #ffffff;
+        transition: color 0.3s ease; */
+    }
+}
+
+.blog-card-bg-btn:hover span {
+    color: #D5DBC6;
+}
+
+.blog-card-bg-btn:hover .service-large-arrow-line {
+    background-color: #D5DBC6;
+}
+
+.blog-card-bg-btn:hover .service-large-arrow-fork::before,
+.blog-card-bg-btn:hover .service-large-arrow-fork::after {
+    background-color: #D5DBC6;
+}
+
+/* ========== СКРЫТИЕ КАРТОЧЕК ПРИ ФИЛЬТРАЦИИ ========== */
+.blog-card.hide,
+.blog-card-alt.hide,
+.blog-card-bg.hide {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Убираем отступы у последней видимой карточки */
+.blog-card:last-child,
+.blog-card-alt:last-child,
+.blog-card-bg:last-child {
+    margin-bottom: 0;
+}
+
+/* Контейнер для карточек */
+section:has(.blog-card, .blog-card-alt, .blog-card-bg) {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Убираем лишние отступы у скрытых карточек */
+.blog-card.hide + .blog-card,
+.blog-card.hide + .blog-card-alt,
+.blog-card.hide + .blog-card-bg,
+.blog-card-alt.hide + .blog-card,
+.blog-card-alt.hide + .blog-card-alt,
+.blog-card-alt.hide + .blog-card-bg,
+.blog-card-bg.hide + .blog-card,
+.blog-card-bg.hide + .blog-card-alt,
+.blog-card-bg.hide + .blog-card-bg {
+    margin-top: 0;
+}
+
+
+
+
+

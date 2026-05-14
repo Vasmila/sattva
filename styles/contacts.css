@@ -1,0 +1,145 @@
+/* ========== HERO СЕКЦИЯ ========== */
+.services-hero-outer {
+    background-image: url('../img/bg-services.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 40px;
+    border-radius: 32px;
+    position: relative;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 768px) {
+    .services-hero-outer {
+        margin: 16px;
+        margin-bottom: 16px;
+        border-radius: 24px;
+        height: 350px;
+        background: #32412E;
+    }
+}
+
+/* Заголовок по центру */
+.services-hero-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 115px;
+    text-align: left;
+}
+@media (max-width: 768px) {
+    .services-hero-title {
+        padding-left: 0px;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+.hero_page {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 120px;
+}
+@media (max-width: 768px) {
+    .hero_page {
+        margin-bottom: 64px;
+    }
+}
+
+
+/* ========== ИНФОРМАЦИОННЫЙ БЛОК ========== */
+.contacts-info {
+    padding: 0 0 120px 0;
+}
+
+@media (max-width: 768px) {
+    .contacts-info {
+        padding: 0 0 60px 0;
+    }
+}
+
+.contacts-info-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    /* padding: 0 40px; */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .contacts-info-container {
+        /* padding: 0 16px; */
+        gap: 32px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Левая колонка - 4 колонки */
+.contacts-info-left {
+    grid-column: span 4;
+}
+
+.contacts-info-title {
+    margin: 0 0 32px 0;
+}
+
+.contacts-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contacts-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.contacts-info-item p {
+    font-size: 20px;
+}
+
+
+/* Правая колонка - 4 колонки */
+.contacts-info-right {
+    grid-column: span 4;
+}
+
+/* Пустая колонка - 4 колонки */
+.contacts-info-empty {
+    grid-column: span 4;
+}
+
+@media (max-width: 768px) {
+    .contacts-info-left,
+    .contacts-info-right,
+    .contacts-info-empty {
+        grid-column: auto;
+    }
+    
+}
+
+/* ========== КАРТА ========== */
+
+.contacts-map-container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.contacts-map-container iframe {
+    width: 100%;
+    height: 450px;
+    border-radius: 32px;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .contacts-map-container iframe {
+        height: 300px;
+        border-radius: 24px;
+    }
+}

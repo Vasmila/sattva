@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Контакты | Массажный салон</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/contacts.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+</head>
+<body>
+    <!-- Первый экран: hero с навигацией -->
+    <section class="hero_page">
+        <div class="services-hero-outer">
+            <nav class="navbar">
+                <img src="../img/logo.png" class="logo" alt="Логотип" id="mainLogo">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="services.html" class="active">Услуги</a></li>
+                    <li><a href="masters.html">Мастера</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+                <button class="burger" id="burgerBtn" aria-label="Меню">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+
+            <div class="services-hero-title">
+                <h1>Контакты</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Информационный блок -->
+    <section>
+        <div class="contacts-info-container">
+            <div class="contacts-info-left">
+                <h3 class="contacts-info-title">Свяжитесь с нами</h3>
+                <div class="contacts-info-list">
+                    <div class="contacts-info-item">
+                        <p>+7 (921) 456-78-99</p>
+                    </div>
+                    <div class="contacts-info-item">
+                        <p>info@massage.ru</p>
+                    </div>
+                    <div class="contacts-info-item">
+                        <p>Ежедневно: 10:00 - 22:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contacts-info-right">
+                <h3 class="contacts-info-title">Адрес</h3>
+                <div class="contacts-info-item">
+                    <p>Россия, г. Санкт-Петербург ул. Свободы, дом 3</p>
+                </div>
+            </div>
+            <div class="contacts-info-empty"></div>
+        </div>
+    </section>
+
+    <!-- Карта -->
+    <section>
+        <div class="contacts-map-container">
+            <iframe 
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A8e3f5a2b1c4d6e8f9g0h1i2j3k4l5m6n7o8p9q0r1s2t3u4v5w6x7y8z9a0b1c2d&source=constructor" 
+                width="100%" 
+                height="450" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+            
+        </div>
+    </section>
+
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <img src="../img/logo.png" class="footer-logo" alt="Логотип">
+                <h4 class="footer-text">Центр восточных массажных<br>практик в Санкт-петербурге</h4>
+                <div class="footer-contact-links">
+                    <h4 href="tel:+78121234567" class="footer-contact-link">тел. +7 (921) 456-78-99</h4>
+                    <h4 href="mailto:info@massage.ru" class="footer-contact-link">info@massage.ru</h4>
+                    <h4 class="footer-contact-link">Россия, г. Санкт-Петербург,<br>ул. Великолепная д.2</h4>
+                    <h4 class="footer-contact-link">с 10:00 до 20:00</h4>
+                </div>
+            </div>
+            
+            <div class="footer-nav">
+                <a href="../index.html" class="footer-nav-link">Главная</a>
+                <a href="services.html" class="footer-nav-link">Услуги</a>
+                <a href="masters.html" class="footer-nav-link">Мастера</a>
+                <a href="about.html" class="footer-nav-link">О нас</a>
+                <a href="blog.html" class="footer-nav-link">Блог</a>
+                <a href="contacts.html" class="footer-nav-link">Контакты</a>
+            </div>
+            
+            <div class="footer-form">
+                <h4 class="footer-form-title">Свяжитесь с нами</h4>
+                <form class="footer-contact-form" id="footerForm">
+                    <div class="form-group">
+                        <label for="footer-name">Имя</label>
+                        <input type="text" id="footer-name" name="name" placeholder="Ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="footer-phone">Телефон</label>
+                        <input type="tel" id="footer-phone" name="phone" placeholder="+7 (___) ___-__-__">
+                    </div>
+                    <div class="form-group">
+                        <label for="footer-email">E-mail</label>
+                        <input type="email" id="footer-email" name="email" placeholder="example@mail.ru">
+                    </div>
+                    <button type="submit" class="footer-submit-btn">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно формы -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalCloseBtn">
+                <span></span>
+                <span></span>
+            </button>
+            <h3 class="modal-title">Записаться на массаж</h3>
+            <p class="modal-subtitle">Оставьте свои контактные данные, и наш администратор свяжется с вами для подтверждения записи</p>
+            
+            <form class="modal-form" id="bookingForm">
+                <div class="modal-form-group">
+                    <label for="modal-name">Ваше имя</label>
+                    <input type="text" id="modal-name" name="name">
+                </div>
+                <div class="modal-form-group">
+                    <label for="modal-phone">Телефон</label>
+                    <input type="tel" id="modal-phone" name="phone">
+                </div>
+                <div class="modal-form-group">
+                    <label for="modal-email">E-mail</label>
+                    <input type="email" id="modal-email" name="email">
+                </div>
+                
+                <div class="modal-checkboxes">
+                    <label class="modal-checkbox">
+                        <input type="checkbox" name="privacy" class="modal-checkbox-input">
+                        <span class="modal-checkbox-custom"></span>
+                        <a href="#" class="modal-checkbox-label">политика конфиденциальности</a>
+                    </label>
+                    <label class="modal-checkbox">
+                        <input type="checkbox" name="offer" class="modal-checkbox-input">
+                        <span class="modal-checkbox-custom"></span>
+                        <a href="#" class="modal-checkbox-label">обработка персональных данных</a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="modal-submit-btn">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/menu.js"></script>
+    <script src="../js/forms.js"></script>
+    <script src="../js/modal.js"></script>
+    <script src="../js/contacts.js"></script>
+</body>
+</html>

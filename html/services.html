@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Наши услуги | Массажный салон</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/services.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+</head>
+<body>
+    <!-- Первый блок: hero с навигацией -->
+    <section class="hero_page">
+        <div class="services-hero-outer">
+            <nav class="navbar">
+                <img src="../img/logo.png" class="logo" alt="Логотип" id="mainLogo">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="services.html" class="active">Услуги</a></li>
+                    <li><a href="masters.html">Мастера</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+                <button class="burger" id="burgerBtn" aria-label="Меню">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+
+            <div class="services-hero-title">
+                <h1>Наши услуги</h1>
+            </div>
+        </div>
+    </section>
+
+        <!-- Блок с фильтрами -->
+    <section class="filters-section">
+            <!-- Фильтры по тегам - как тэги на карточках -->
+            <div class="filters-tags">
+                <button class="filter-tag active" data-filter="all">Все</button>
+                <button class="filter-tag" data-filter="massage">Массаж тела</button>
+                <button class="filter-tag" data-filter="face">Уход за лицом</button>
+                <button class="filter-tag" data-filter="spa">SPA-ритуал</button>
+            </div>
+            
+            <!-- Фильтры по времени и цене -->
+            <div class="filters-extra">
+                <div class="filter-select">
+                    <span class="filter-select-label">Время:</span>
+                    <div class="filter-select-wrapper">
+                        <button class="filter-select-btn" id="timeFilterBtn">Любое</button>
+                        <div class="filter-dropdown" id="timeDropdown">
+                            <div class="filter-dropdown-item" data-value="all">Любое</div>
+                            <div class="filter-dropdown-item" data-value="60">60 минут</div>
+                            <div class="filter-dropdown-item" data-value="120">120 минут</div>
+                            <div class="filter-dropdown-item" data-value="180">180 минут</div>
+                            <div class="filter-dropdown-item" data-value="240">240 минут</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-select">
+                    <span class="filter-select-label">Цена:</span>
+                    <div class="filter-select-wrapper">
+                        <button class="filter-select-btn" id="priceFilterBtn">Любая</button>
+                        <div class="filter-dropdown" id="priceDropdown">
+                            <div class="filter-dropdown-item" data-value="all">Любая</div>
+                            <div class="filter-dropdown-item" data-value="2000">до 2000 ₽</div>
+                            <div class="filter-dropdown-item" data-value="3000">до 3000 ₽</div>
+                            <div class="filter-dropdown-item" data-value="4000">до 4000 ₽</div>
+                            <div class="filter-dropdown-item" data-value="5000">до 5000 ₽</div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+            <!-- Блок с услугами -->
+    <section class="services-section">
+        <div class="services-track" id="servicesTrack">
+                            
+            <!-- Большая карточка услуги 1 (полная ширина) -->
+            <div class="service-card-large" data-tag="massage" data-time="120" data-price="4500" style="background-image: url('../img/mas_1.png'); background-position: center;">
+                <div class="service-large-header">
+                    <h5 class="service-large-title-main">Попробуйте новую услугу</h5>
+                    <div class="service-large-tags">
+                        <span class="service-large-tag">Массаж тела</span>
+                        <span class="service-large-tag">Новая услуга</span>
+                    </div>
+                </div>
+                <div class="service-large-middle">
+                    <h4 class="service-large-title-secondary">Аромарелакс-массаж</h4>
+                    <p class="service-large-text">
+                        Мягкие, обволакивающие движения в сочетании с использованием натуральных эфирных масел. Работает не только с телом, но и с психоэмоциональным состоянием.
+                    </p>
+                </div>
+                <div class="service-large-footer">
+                    <div class="service-large-price-block">
+                        <span class="service-large-price">4 500 ₽</span>
+                        <div class="service-large-arrow">
+                            <div class="service-large-arrow-line"></div>
+                            <div class="service-large-arrow-fork"></div>
+                        </div>
+                        <span class="service-large-duration">120 минут</span>
+                    </div>
+                    <a href="#" class="service-large-btn">Подробнее</a>
+                </div>
+            </div>
+            
+            <!-- Карточка услуги 1 (обычная) -->
+            <div class="service-card" data-tag="massage" data-time="60" data-price="2500">
+                <div class="service-image">
+                    <img src="../img/mas_2.png">
+                </div>
+                <div class="service-info">
+                    <div class="service-tag">Массаж тела</div>
+                    <h4>Классический массаж тела</h4>
+                </div>
+                <div class="service-footer">
+                    <div class="service-price-block">
+                        <h4 class="service-price">2500 ₽</h4>
+                        <div class="service-line"></div>
+                        <p class="service-duration">60 минут</p>
+                    </div>
+                    <a href="service-detail.html" class="service-btn">Подробнее</a>
+                </div>
+            </div>
+            
+            <!-- Карточка услуги 2 (обычная) -->
+            <div class="service-card" data-tag="face" data-time="60" data-price="2500">
+                <div class="service-image">
+                    <img src="../img/mas_3.png">
+                </div>
+                <div class="service-info">
+                    <div class="service-tag">Уход за лицом</div>
+                    <h4>Классический массаж лица</h4>
+                </div>
+                <div class="service-footer">
+                    <div class="service-price-block">
+                        <h4 class="service-price">2500 ₽</h4>
+                        <div class="service-line"></div>
+                        <p class="service-duration">60 минут</p>
+                    </div>
+                    <a href="#" class="service-btn">Подробнее</a>
+                </div>
+            </div>
+            
+            <!-- Карточка услуги 3 (обычная) -->
+            <div class="service-card" data-tag="massage" data-time="60" data-price="2500">
+                <div class="service-image">
+                    <img src="../img/mas_4.png">
+                </div>
+                <div class="service-info">
+                    <div class="service-tag">Массаж тела</div>
+                    <h4>Массаж с горячим песком и солью</h4>
+                </div>
+                <div class="service-footer">
+                    <div class="service-price-block">
+                        <h4 class="service-price">2500 ₽</h4>
+                        <div class="service-line"></div>
+                        <p class="service-duration">60 минут</p>
+                    </div>
+                    <a href="#" class="service-btn">Подробнее</a>
+                </div>
+            </div>
+            
+            <!-- Карточка услуги 4 (обычная) -->
+            <div class="service-card" data-tag="spa" data-time="60" data-price="2500">
+                <div class="service-image">
+                    <img src="../img/mas_5.png">
+                </div>
+                <div class="service-info">
+                    <div class="service-tag">SPA-ритуал</div>
+                    <h4>SPA-ритуал «Морские водоросли»</h4>
+                </div>
+                <div class="service-footer">
+                    <div class="service-price-block">
+                        <h4 class="service-price">2500 ₽</h4>
+                        <div class="service-line"></div>
+                        <p class="service-duration">60 минут</p>
+                    </div>
+                    <a href="#" class="service-btn">Подробнее</a>
+                </div>
+            </div>
+
+            
+            
+            <!-- Большая карточка услуги 2 (на 2 колонки) - вместо 5 карточки -->
+             <div class="service-card-large-half" data-tag="spa" data-time="120" data-price="4500" style="background-image: url('../img/mas_6.png'); background-position: center;">
+                <div class="service-large-header">
+                    <h5 class="service-large-title-main">Рекомендуем</h5>
+                    <div class="service-large-tags">
+                        <span class="service-large-tag">SPA-ритуал</span>
+                        <span class="service-large-tag">Для вас</span>
+                    </div>
+                </div>
+                <div class="service-large-middle">
+                    <h4 class="service-large-title-secondary">Массаж горячими камнями</h4>
+                    <!-- <p class="service-large-text">
+                        Мягкие, обволакивающие движения в сочетании с использованием натуральных эфирных масел. Работает не только с телом, но и с психоэмоциональным состоянием.
+                    </p> -->
+                </div>
+                <div class="service-large-footer">
+                    <div class="service-large-price-block">
+                        <span class="service-large-price">4 500 ₽</span>
+                        <div class="service-large-arrow">
+                            <div class="service-large-arrow-line"></div>
+                            <div class="service-large-arrow-fork"></div>
+                        </div>
+                        <span class="service-large-duration">120 минут</span>
+                    </div>
+                    <a href="#" class="service-large-btn">Подробнее</a>
+                </div>
+            </div>
+            
+            <!-- Карточка услуги 6 (обычная) -->
+            <div class="service-card" data-tag="spa" data-time="60" data-price="2500">
+                <div class="service-image">
+                    <img src="../img/mas_7.png">
+                </div>
+                <div class="service-info">
+                    <div class="service-tag">SPA-ритуал</div>
+                    <h4>SPA-ритуал «Полное погружение»</h4>
+                </div>
+                <div class="service-footer">
+                    <div class="service-price-block">
+                        <h4 class="service-price">2500 ₽</h4>
+                        <div class="service-line"></div>
+                        <p class="service-duration">60 минут</p>
+                    </div>
+                    <a href="#" class="service-btn">Подробнее</a>
+                </div>
+            </div>
+            
+            <!-- Карточка услуги 7 (обычная) -->
+            <div class="service-card" data-tag="massage" data-time="60" data-price="2500">
+                <div class="service-image">
+                    <img src="../img/mas_8.png">
+                </div>
+                <div class="service-info">
+                    <div class="service-tag">Массаж тела</div>
+                    <h4>Восточный массаж</h4>
+                </div>
+                <div class="service-footer">
+                    <div class="service-price-block">
+                        <h4 class="service-price">2500 ₽</h4>
+                        <div class="service-line"></div>
+                        <p class="service-duration">60 минут</p>
+                    </div>
+                    <a href="#" class="service-btn">Подробнее</a>
+                </div>
+            </div>
+
+            <div class="service-card" data-tag="massage" data-time="60" data-price="2500">
+                <div class="service-image">
+                    <img src="../img/mas_9.png">
+                </div>
+                <div class="service-info">
+                    <div class="service-tag">Массаж тела</div>
+                    <h4>Массаж в четыре руки</h4>
+                </div>
+                <div class="service-footer">
+                    <div class="service-price-block">
+                        <h4 class="service-price">2500 ₽</h4>
+                        <div class="service-line"></div>
+                        <p class="service-duration">60 минут</p>
+                    </div>
+                    <a href="#" class="service-btn">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+        <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-info">
+                <img src="../img/logo.png" class="footer-logo" alt="Логотип">
+                <h4 class="footer-text">Центр восточных массажных<br>практик в Санкт-петербурге</h4>
+                <div class="footer-contact-links">
+                    <h4 href="tel:+78121234567" class="footer-contact-link">тел. +7 (921) 456-78-99</h4>
+                    <h4 href="mailto:info@massage.ru" class="footer-contact-link">info@massage.ru</h4>
+                    <h4 class="footer-contact-link">Россия, г. Санкт-Петербург,<br>ул. Великолепная д.2</h4>
+                    <h4 class="footer-contact-link">с 10:00 до 20:00</h4>
+                </div>
+            </div>
+            
+            <div class="footer-nav">
+                <a href="#" class="footer-nav-link">Главная</a>
+                <a href="#" class="footer-nav-link">Услуги</a>
+                <a href="#" class="footer-nav-link">Мастера</a>
+                <a href="#" class="footer-nav-link">О нас</a>
+                <a href="#" class="footer-nav-link">Блог</a>
+                <a href="#" class="footer-nav-link">Контакты</a>
+            </div>
+            
+            <div class="footer-form">
+                <h4 class="footer-form-title">Свяжитесь с нами</h4>
+                <form class="footer-contact-form" id="footerForm">
+                    <div class="form-group">
+                        <label for="footer-name">Имя</label>
+                        <input type="text" id="footer-name" name="name" placeholder="Ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="footer-phone">Телефон</label>
+                        <input type="tel" id="footer-phone" name="phone" placeholder="+7 (___) ___-__-__">
+                    </div>
+                    <div class="form-group">
+                        <label for="footer-email">E-mail</label>
+                        <input type="email" id="footer-email" name="email" placeholder="example@mail.ru">
+                    </div>
+                    <button type="submit" class="footer-submit-btn">Отправить</button>
+                    
+                </form>
+            </div>
+        </div>
+    </footer>
+
+        <!-- Модальное окно формы -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalCloseBtn">
+                <span></span>
+                <span></span>
+            </button>
+            <h3 class="modal-title">Записаться на массаж</h3>
+            <p class="modal-subtitle">Оставьте свои контактные данные, и наш администратор свяжется с вами для подтверждения записи</p>
+            
+            <form class="modal-form" id="bookingForm">
+                <div class="modal-form-group">
+                    <label for="modal-name">Ваше имя</label>
+                    <input type="text" id="modal-name" name="name">
+                </div>
+                <div class="modal-form-group">
+                    <label for="modal-phone">Телефон</label>
+                    <input type="tel" id="modal-phone" name="phone">
+                </div>
+                <div class="modal-form-group">
+                    <label for="modal-email">E-mail</label>
+                    <input type="email" id="modal-email" name="email">
+                </div>
+                
+                <div class="modal-checkboxes">
+                    <label class="modal-checkbox">
+                        <input type="checkbox" name="privacy" class="modal-checkbox-input">
+                        <span class="modal-checkbox-custom"></span>
+                        <a href="#" class="modal-checkbox-label">политика конфиденциальности</a>
+                    </label>
+                    <label class="modal-checkbox">
+                        <input type="checkbox" name="offer" class="modal-checkbox-input">
+                        <span class="modal-checkbox-custom"></span>
+                        <a href="#" class="modal-checkbox-label">обработка персональных данных</a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="modal-submit-btn">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="../js/menu.js"></script>
+    <script src="../js/services-page.js"></script>
+    <script src="../js/modal.js"></script>
+</body>
+</html>

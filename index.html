@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Массажный салон "Саттва"</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style_main.css">
+    <link rel="stylesheet" href="styles/certificates.css">
+    <link rel="stylesheet" href="styles/modal.css">
+</head>
+<body>
+    <div class="site-wrapper">
+    <!-- Первый экран -->
+    <section class="hero" id="hero">
+        <div class="hero-outer">
+            <!-- Навигационное меню -->
+            <nav class="navbar">
+                <img src="img/logo.png" class="logo" alt="Логотип" id="mainLogo">
+                <ul class="nav-links">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="html/services.html" class="active">Услуги</a></li>
+                    <li><a href="html/masters.html">Мастера</a></li>
+                    <li><a href="html/about.html">О нас</a></li>
+                    <li><a href="html/blog.html">Блог</a></li>
+                    <li><a href="html/contacts.html">Контакты</a></li>
+                </ul>
+                <button class="burger" id="burgerBtn" aria-label="Меню">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+
+            <div class="hero-content">
+                  <div class="hero-text">
+                        <div class="grid-text-line-1">Центр восточных массажных практик в Санкт-Петербурге</div>
+                        <div class="grid-text-line-2">МАССАЖ ДЛЯ ДУШИ И ТЕЛА</div>
+                        <div class="grid-text-line-3">ВАШ ОАЗИС В ГОРОДСКОЙ СУЕТЕ</div>
+                    </div>
+                  <div class="action-row">
+                      <a href="#" class="btn-primary" onclick="openBookingModal(); return false;">Записаться</a>
+                      <div class="inline-note"><p>метро Василеостровская, ул. Великолепная д.2</p></div>
+                  </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Инфографика -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="img/person.png" alt="Массажист">
+            </div>
+            <div class="about-text">
+                  <h2 class="about-title">Уже много лет мы дарим вам <br> удовольствие и заботу</h2>
+                  <div class="infographics">
+                      <div class="infographic-item">
+                          <div class="infographic-number">10+</div>
+                          <div class="infographic-label">лет практики</div>
+                      </div>
+                      <div class="infographic-item">
+                          <div class="infographic-number">100+</div>
+                          <div class="infographic-label">довольных клиентов</div>
+                      </div>
+                      <div class="infographic-item">
+                          <div class="infographic-number">10+</div>
+                          <div class="infographic-label">техник массажа</div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Особенности салона -->
+    <section class="features-section">
+        <h3>Наш подход</h3>
+        <div class="features-grid">
+            <!-- Карточка 1 -->
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-title">Широкий выбор</div>
+                    <div class="feature-image">
+                        <img src="img/icon1.png">
+                    </div>
+                </div>
+                <p class="feature-text">В нашем арсенале — десятки аутентичных методик от глубокого тайского массажа до мягких расслабляющих техник бали. Мы подберем именно то воздействие, которое нужно вашему телу сегодня.</p>
+            </div>
+            <!-- Карточка 2 -->
+            <div class="feature-card">
+                <div class="feature-header">
+                    <h3 class="feature-title">Мастерство</h3>
+                    <div class="feature-image">
+                        <img src="img/icon2.png">
+                    </div>
+                </div>
+                <p class="feature-text">Наши специалисты — хранители древних знаний. Они прошли глубокое обучение и практику, чтобы передать вам не просто технику движений, а настоящую энергию исцеления и гармонии.</p>
+            </div>
+            <!-- Карточка 3 -->
+            <div class="feature-card">
+                <div class="feature-header">
+                    <h3 class="feature-title">Ваш оазис</h3>
+                    <div class="feature-image">
+                        <img src="img/icon3.png">
+                    </div>
+                </div>
+                <p class="feature-text">Забудьте о городском шуме, переступив наш порог. Мягкий свет, тонкие ароматы благовоний и едва уловимая восточная музыка создают идеальное пространство для вашего ментального отдыха.</p>
+            </div>
+            <!-- Карточка 4 -->
+            <div class="feature-card">
+                <div class="feature-header">
+                    <h3 class="feature-title">Перезагрузка</h3>
+                    <div class="feature-image">
+                        <img src="img/icon4.png">
+                    </div>
+                </div>
+                <p class="feature-text">После посещения салона вы почувствуете не только физическое расслабление, но и ясность мыслей. Это лучший способ восстановить силы и подготовиться к новым достижениям.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Акции -->
+    <section class="promotions-section">
+        <h3>Акции</h3>
+        <div class="promotions-slider">
+            <div class="promotions-track" id="promotionsTrack">
+                <!-- Карточка 1 -->
+                <div class="promotion-card">
+                    <p class="promotion-tag">Первое посещение</p>
+                    <div class="promotion-content">
+                        <h4 class="promotion-card-title">Знакомство с Востоком</h4>
+                        <p class="promotion-description">Скидка 20% на любой первый визит в наш салон. Это идеальная возможность протестировать наши уникальные техники, познакомиться с мастерами и оценить атмосферу оазиса спокойствия без лишних сомнений.</p>
+                    </div>
+                    <div class="promotion-footer">
+                        <h4 class="promotion-price">скидка 20%</h4>
+                        <div class="promotion-line"></div>
+                        <div class="promotion-image">
+                            <img src="img/sale1.png" alt="Акция массаж">
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="promotion-card">
+                    <p class="promotion-tag">По вторникам и средам</p>
+                    <div class="promotion-content">
+                        <h4 class="promotion-card-title">Антистресс недели</h4>
+                        <p class="promotion-description">Снимите напряжение в середине рабочей недели. Только по вторникам и средам классический массаж спины и массаж стоп идут вместе. Перезагрузите себя!</p>
+                    </div>
+                    <div class="promotion-footer">
+                        <h4 class="promotion-price">2 000 ₽</h4>
+                        <div class="promotion-line"></div>
+                        <div class="promotion-image">
+                            <img src="img/sale2.png" alt="Акция массаж">
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 3 -->
+                <div class="promotion-card">
+                    <p class="promotion-tag">Для пар</p>
+                    <div class="promotion-content">
+                        <h4 class="promotion-card-title">Восточный дуэт</h4>
+                        <p class="promotion-description">Приходите на массаж вдвоем и получите скидку 15% на оба сеанса. Разделите момент глубокого расслабления с близким человеком или подругой. Мы создадим для вас общую атмосферу гармонии, чтобы ваш отдых стал еще более приятным и душевным.</p>
+                    </div>
+                    <div class="promotion-footer">
+                        <h4 class="promotion-price">скидка 15%</h4>
+                        <div class="promotion-line"></div>
+                        <div class="promotion-image">
+                            <img src="img/sale3.png" alt="Акция массаж">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Точки-переключатели -->
+            <div class="promotions-dots" id="promotionsDots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Популярные услуги -->
+    <section class="services-section">
+        <div class="services-header">
+            <h3>Популярные услуги</h3>
+            <a href="html/services.html" class="services-link">Все услуги</a>
+        </div>
+        
+        <div class="services-slider">
+            <div class="services-track" id="servicesTrack">
+                
+                <!-- Карточка услуги 1 -->
+                <div class="service-card" data-tag="face" data-time="60" data-price="2500">
+                    <div class="service-image">
+                        <img src="img/mas_3.png">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tag">Уход за лицом</div>
+                        <h4>Классический массаж лица</h4>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price-block">
+                            <h4 class="service-price">2500 ₽</h4>
+                            <div class="service-line"></div>
+                            <p class="service-duration">60 минут</p>
+                        </div>
+                        <a href="#" class="service-btn" onclick="openBookingModal(); return false;">Записаться</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка услуги 2 -->
+                <div class="service-card" data-tag="massage" data-time="60" data-price="2500">
+                    <div class="service-image">
+                        <img src="img/mas_4.png">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tag">Массаж тела</div>
+                        <h4>Массаж с горячим песком и солью</h4>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price-block">
+                            <h4 class="service-price">2500 ₽</h4>
+                            <div class="service-line"></div>
+                            <p class="service-duration">60 минут</p>
+                        </div>
+                        <a href="#" class="service-btn" onclick="openBookingModal(); return false;">Записаться</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка услуги 3 -->
+                <div class="service-card" data-tag="spa" data-time="60" data-price="2500">
+                    <div class="service-image">
+                        <img src="img/mas_5.png">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tag">SPA-ритуал</div>
+                        <h4>SPA-ритуал «Морские водоросли»</h4>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price-block">
+                            <h4 class="service-price">2500 ₽</h4>
+                            <div class="service-line"></div>
+                            <p class="service-duration">60 минут</p>
+                        </div>
+                        <a href="#" class="service-btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка услуги 4 -->
+                <div class="service-card" data-tag="spa" data-time="60" data-price="2500">
+                    <div class="service-image">
+                        <img src="img/mas_7.png">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tag">SPA-ритуал</div>
+                        <h4>SPA-ритуал «Полное погружение»</h4>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price-block">
+                            <h4 class="service-price">2500 ₽</h4>
+                            <div class="service-line"></div>
+                            <p class="service-duration">60 минут</p>
+                        </div>
+                        <a href="#" class="service-btn">Подробнее</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка услуги 5 -->
+                <div class="service-card" data-tag="massage" data-time="60" data-price="2500">
+                    <div class="service-image">
+                        <img src="img/mas_8.png">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tag">Массаж тела</div>
+                        <h4>Восточный массаж</h4>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price-block">
+                            <h4 class="service-price">2500 ₽</h4>
+                            <div class="service-line"></div>
+                            <p class="service-duration">60 минут</p>
+                        </div>
+                        <a href="#" class="service-btn">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Точки-переключатели -->
+        <div class="services-dots" id="servicesDots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+        <!-- Сертификаты -->
+    <section class="certificates-section">
+        <h3>Сертификаты</h3>
+        <!-- Десктопная версия -->
+        <div class="certificates-desktop">
+            <!-- Верхняя карточка -->
+            <div class="cert-card-large" id="certLargeCard" data-cert-color="0">
+                <div class="cert-large-left">
+                    <h5 class="cert-large-title" id="largeTitle">Подарочный сертификат</h5>
+                    <p class="cert-large-text" id="largeText">Идеальный подарок для тех, кто ценит заботу о теле и душе. Сертификат действует на любые услуги салона.</p>
+                    <div class="cert-large-info">
+                        <div class="cert-price-block-vertical">
+                            <div class="cert-price-value" id="largePrice">5 000 ₽</div>
+                            <div class="cert-line"></div>
+                            <div class="cert-time" id="largeTime">без ограничений</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cert-large-right">
+                    <img src="img/cert_1.png" alt="Сертификат" class="cert-large-img" id="largeImg">
+                    <a href="#" class="cert-large-btn" id="largeBtn" onclick="openBookingModal(); return false;">Заказать</a>
+                </div>
+            </div>
+            
+            <!-- Две нижние карточки -->
+            <div class="cert-cards-row" id="certRow"></div>
+        </div>
+        
+        <!-- Мобильная версия -->
+        <div class="certificates-mobile">
+            <div class="cert-mobile-track" id="certMobileTrack"></div>
+            <div class="cert-mobile-dots" id="certMobileDots"></div>
+        </div>
+    </section>
+
+        <!-- Популярные вопросы -->
+    <section class="faq-section">
+        <h3>Популярные вопросы</h3>
+        <div class="faq-container">
+            <!-- Вопрос 1 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4 class="faq-question-text">Как записаться на массаж?</h4>
+                    <button class="faq-toggle" aria-label="Раскрыть ответ">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="faq-answer">
+                    <p><br></p>
+                    <p>Вы можете записаться на массаж по телефону +7 (812) 123-45-67 или через форму связи на сайте. Желаемую дату и время можно выбрать в чате с администратором. Предварительная запись обязательна.</p>
+                </div>
+            </div>
+            <!-- Вопрос 2 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4 class="faq-question-text">Что брать с собой на сеанс?</h4>
+                    <button class="faq-toggle" aria-label="Раскрыть ответ">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="faq-answer">
+                    <p><br></p>
+                    <p>Короткий ответ — ничего! Мы позаботились о том, чтобы ваш визит был максимально комфортным. Мы предоставляем всё необходимое для Вашего посещения.</p>
+                </div>
+            </div>
+            <!-- Вопрос 3 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4 class="faq-question-text">Есть ли противопоказания к посещению?</h4>
+                    <button class="faq-toggle" aria-label="Раскрыть ответ">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="faq-answer">
+                    <p><br></p>
+                    <p>Пожалуйста, ознакомьтесь с ними перед записью на странице услуги. Если у вас есть сомнения, проконсультируйтесь с нашим специалистом.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Информация -->
+            <div class="footer-info">
+                <img src="img/logo.png" class="footer-logo" alt="Логотип">
+                <h4 class="footer-text">Центр восточных массажных<br>практик в Санкт-петербурге</h4>
+                <div class="footer-contact-links">
+                    <h4 href="tel:+78121234567" class="footer-contact-link">тел. +7 (921) 456-78-99</h4>
+                    <h4 href="mailto:info@massage.ru" class="footer-contact-link">info@massage.ru</h4>
+                    <h4 class="footer-contact-link">Россия, г. Санкт-Петербург,<br>ул. Великолепная д.2</h4>
+                    <h4 class="footer-contact-link">с 10:00 до 20:00</h4>
+                </div>
+            </div>
+            
+            <!-- Навигация -->
+            <div class="footer-nav">
+                <a href="#" class="footer-nav-link">Главная</a>
+                <a href="#" class="footer-nav-link">Услуги</a>
+                <a href="#" class="footer-nav-link">Мастера</a>
+                <a href="#" class="footer-nav-link">О нас</a>
+                <a href="#" class="footer-nav-link">Блог</a>
+                <a href="#" class="footer-nav-link">Контакты</a>
+            </div>
+            
+            <!-- Обратная связь -->
+            <div class="footer-form">
+                <h4 class="footer-form-title">Свяжитесь с нами</h4>
+                <form class="footer-contact-form" id="footerForm">
+                    <div class="form-group">
+                        <label for="footer-name">Имя</label>
+                        <input type="text" id="footer-name" name="name" placeholder="Ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="footer-phone">Телефон</label>
+                        <input type="tel" id="footer-phone" name="phone" placeholder="+7 (___) ___-__-__">
+                    </div>
+                    <div class="form-group">
+                        <label for="footer-email">E-mail</label>
+                        <input type="email" id="footer-email" name="email" placeholder="example@mail.ru">
+                    </div>
+                    <button type="submit" class="footer-submit-btn">Отправить</button>
+                    
+                </form>
+            </div>
+        </div>
+    </footer>
+
+        <!-- Модальное окно формы -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalCloseBtn">
+                <span></span>
+                <span></span>
+            </button>
+            <h3 class="modal-title">Записаться на массаж</h3>
+            <p class="modal-subtitle">оставьте свои контактные данные, и мы очень быстро с вами свяжемся, ответим на все вопросы и запишем на нужную программу</p>
+            
+            <form class="modal-form" id="bookingForm">
+                <div class="modal-form-group">
+                    <label for="modal-name">Имя</label>
+                    <input type="text" id="modal-name" name="name">
+                </div>
+                <div class="modal-form-group">
+                    <label for="modal-phone">Телефон</label>
+                    <input type="tel" id="modal-phone" name="phone">
+                </div>
+                <div class="modal-form-group">
+                    <label for="modal-email">E-mail</label>
+                    <input type="email" id="modal-email" name="email">
+                </div>
+                
+                <div class="modal-checkboxes">
+                    <label class="modal-checkbox">
+                        <input type="checkbox" name="privacy" class="modal-checkbox-input">
+                        <span class="modal-checkbox-custom"></span>
+                        <a href="#" class="modal-checkbox-label">политика конфиденциальности</a>
+                    </label>
+                    <label class="modal-checkbox">
+                        <input type="checkbox" name="offer" class="modal-checkbox-input">
+                        <span class="modal-checkbox-custom"></span>
+                        <a href="#" class="modal-checkbox-label">обработка персональных данных</a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="modal-submit-btn">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/menu.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/certificates.js"></script>
+    <script src="js/faq.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+</html>

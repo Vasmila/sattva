@@ -1,0 +1,392 @@
+/* ========== HERO СЕКЦИЯ ========== */
+.services-hero-outer {
+    background-image: url('../img/bg-masters.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 40px;
+    border-radius: 32px;
+    position: relative;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 768px) {
+    .services-hero-outer {
+        margin: 16px;
+        margin-bottom: 16px;
+        border-radius: 24px;
+        height: 350px;
+        background: #6A8366;
+    }
+}
+
+/* Заголовок по центру */
+.services-hero-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 115px;
+    text-align: left;
+}
+@media (max-width: 768px) {
+    .services-hero-title {
+        padding-left: 0px;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+.hero_page {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 120px;
+}
+
+/* ========== СЕКЦИЯ С КАРТОЧКАМИ ========== */
+.masters-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+@media (max-width: 1440px) {
+    .masters-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        }
+}
+@media (max-width: 1024px) {
+    .masters-section {
+        grid-template-columns: repeat(2, 1fr);
+        }
+}
+
+@media (max-width: 768px) {
+    .masters-section {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+/* ========== КАРТОЧКА МАСТЕРА ========== */
+.master-card {
+    background-color: #FFFFFF;
+    border-radius: 32px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.master-photo {
+    width: 100%;
+    height: 470px;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-bottom: 32px;
+}
+@media (max-width: 768px) {
+    .master-photo {
+        height: 356px;
+    }
+}
+
+
+.master-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.master-card:hover .master-photo img {
+    transform: scale(1.05);
+}
+
+.master-info {
+    margin-bottom: 32px;
+}
+
+.master-name {
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.master-specialty {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Кнопка */
+.master-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    border: none;
+    border-radius: 60px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+
+.master-btn span {
+    font-family: 'GilroySemibold', sans-serif;
+    font-size: 24px;
+    color: #000000;
+}
+.master-btn:hover span{
+    color: #6A8366;
+}
+
+
+.service-large-arrow {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+/* Длинная линия стрелки */
+.service-large-arrow-line {
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+    position: relative;
+}
+
+
+
+/* Расходящиеся линии на конце (стрелка указывает вправо - линии расходятся вправо) */
+.service-large-arrow-fork {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 30px;
+}
+
+.service-large-arrow-fork::before,
+.service-large-arrow-fork::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 24px;
+    background-color: #000000;
+    right: 0;
+}
+
+/* Верхняя линия - наклон вправо-вверх */
+.service-large-arrow-fork::before {
+    transform: rotate(-45deg);
+    top: -5px;
+    right: 8px;
+}
+
+/* Нижняя линия - наклон вправо-вниз */
+.service-large-arrow-fork::after {
+    transform: rotate(45deg);
+    bottom: -5px;
+    right: 8px;
+}
+
+.master-btn:hover .service-large-arrow-line{
+    background-color: #6A8366;
+}
+.master-btn:hover .service-large-arrow-fork::before{
+    background-color: #6A8366;
+}
+.master-btn:hover .service-large-arrow-fork::after{
+    background-color: #6A8366;
+}
+
+
+
+
+/* ========== МОДАЛЬНОЕ ОКНО МАСТЕРА ========== */
+.master-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+}
+
+.master-modal.active {
+    display: flex;
+}
+
+.master-modal-content {
+    position: relative;
+    width: 900px;
+    max-width: 90%;
+    background-color: #ECF0E0;
+    border-radius: 32px;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+/* Кнопка закрытия */
+.master-modal-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.master-modal-close span {
+    position: absolute;
+    width: 40px;
+    height: 1px;
+    background-color: #000000;
+    transition: all 0.3s ease;
+}
+
+.master-modal-close span:first-child {
+    transform: rotate(45deg);
+}
+
+.master-modal-close span:last-child {
+    transform: rotate(-45deg);
+}
+
+.master-modal-close:hover span {
+    background-color: #6A8366;
+}
+
+/* Заголовок и подпись */
+.master-modal-header {
+    margin-bottom: 56px;
+    padding-right: 40px;
+}
+
+.master-modal-name {
+    /* font-family: 'ChampagneLimousines', sans-serif;
+    font-size: 40px; */
+    font-weight: 900;
+    color: #000000;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.master-modal-specialty {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 24px;
+
+}
+
+/* Тело модального окна - две равные колонки */
+.master-modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+}
+
+/* Фото */
+.master-modal-photo {
+    width: 100%;
+    height: 470px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.master-modal-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Информация */
+/* .master-modal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+} */
+
+
+/* .master-modal-description {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #5A6A58;
+} */
+
+/* Адаптивность для планшета */
+@media (max-width: 900px) {
+    .master-modal-name {
+        font-size: 32px;
+    }
+    
+    .master-modal-photo {
+        height: 350px;
+    }
+}
+
+/* Адаптивность для мобильной версии */
+@media (max-width: 768px) {
+    .master-modal-content {
+        padding: 24px;
+        max-width: calc(100% - 32px);
+        margin: 16px;
+    }
+    
+    .master-modal-close {
+        top: 20px;
+        right: 20px;
+    }
+    
+    .master-modal-header {
+        margin-bottom: 32px;
+        padding-right: 30px;
+    }
+    
+    .master-modal-name {
+        font-size: 24px;
+        margin-bottom: 4px;
+    }
+    
+    .master-modal-specialty {
+        font-size: 14px;
+    }
+    
+    .master-modal-body {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .master-modal-photo {
+        height: 300px;
+    }
+    
+    .master-modal-experience {
+        font-size: 16px;
+    }
+    
+    .master-modal-description {
+        font-size: 14px;
+    }
+}
+
+

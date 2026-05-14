@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Тайский массаж для тела | Массажный салон</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/style_main.css">
+    <link rel="stylesheet" href="../styles/service-detail.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+</head>
+<body>
+    <!-- Первый экран: hero с навигацией -->
+    <section class="service-hero">
+        <div class="service-hero-outer">
+            <nav class="navbar">
+                <img src="../img/logo.png" class="logo" alt="Логотип" id="mainLogo">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="masters.html">Мастера</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+                <button class="burger" id="burgerBtn" aria-label="Меню">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+
+            <!-- Картинка для мобильной версии -->
+            <div class="service-hero-mobile-image">
+                <img src="../img/service-detail-bg2.png" alt="Тайский массаж">
+            </div>
+
+            <div class="service-hero-text-block">
+                <div class="service-hero-content">
+                    <h2 class="service-hero-title">Массаж с горячим <br>песком и солью</h2>
+                    <div class="service-hero-tag">Массаж тела</div>
+                    
+                    <div class="service-hero-footer">
+                        <div class="service-hero-price-block">
+                            <span class="service-hero-price">2 500 ₽</span>
+                            <div class="service-hero-arrow">
+                                <div class="service-hero-arrow-line"></div>
+                                <div class="service-hero-arrow-fork"></div>
+                            </div>
+                            <span class="service-hero-duration">60 минут</span>
+                        </div>
+                        <a href="#" class="service-hero-btn btn-primary" onclick="openBookingModal(); return false;">Записаться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок с информацией -->
+    <section class="service-info-section">
+        <div class="service-info-container">
+            <!-- Левая колонка -->
+            <div class="service-info-left">
+                <div class="service-info-block">
+                    <h4>Описание</h4>
+                    <p>
+                        Массаж горячим песком и солью — это эксклюзивная спа-процедура, сочетающая в себе методы глубокого прогрева, детоксикации и интенсивного воздействия на мышцы. Это не просто релакс, а мощный терапевтический инструмент для восстановления организма на клеточном уровне.<br><br>
+                        В чем уникальность метода:<br><br>
+                        Процедура базируется на сочетании трех факторов: термического воздействия, механического пилинга и минерального насыщения.
+                        <br><br>
+                        1. Горячий песок (Термотерапия)
+                        <br>
+                        Мелкодисперсный песок, нагретый до оптимальной температуры, обеспечивает мягкое, но глубокое прогревание тканей. Тепло проникает глубже, чем при обычном массаже, расширяя сосуды и ускоряя кровоток. Это помогает «разбить» застойные явления и снять мышечные спазмы.
+                        <br><br>
+                        2. Морская соль (Осмотический эффект)
+                        <br>
+                        Соль выступает в роли мощного детокса. Благодаря осмотическому давлению, кристаллы соли буквально «вытягивают» лишнюю жидкость и токсины из межклеточного пространства, помогая справиться с отеками.
+                        <br><br>
+                        3. Скрабирующий эффект
+                        <br>
+                        Массаж песком и солью работает как интенсивный пилинг. Он удаляет ороговевшие частицы кожи, делая ее невероятно гладкой, бархатистой и сияющей.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Правая колонка - три блока -->
+            <div class="service-info-right">
+                <div class="service-info-block">
+                    <h4>Результат</h4>
+                    <p>
+                        Улучшает кровообращение, снимает мышечное напряжение, повышает гибкость суставов, 
+                        укрепляет иммунитет и нормализует работу внутренних органов.
+                    </p>
+                </div>
+                
+                <div class="service-info-block">
+                    <h4>Кому рекомендуется</h4>
+                    <p>
+                        Стресс, хроническая усталость, боли в спине и шее, малоподвижный образ жизни, 
+                        нарушения сна, головные боли, снижение иммунитета.
+                    </p>
+                </div>
+                
+                <div class="service-info-block">
+                    <h4>Противопоказания</h4>
+                    <p>
+                        Острые воспалительные процессы, повышенная температура, онкологические заболевания, 
+                        тромбоз, варикозное расширение вен, первые 3 месяца беременности.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- НОВЫЙ БЛОК: ПОПУЛЯРНЫЕ УСЛУГИ -->
+    <section class="services-section">
+        <h3>Вам может понравится</h3>
+        
+        <div class="services-slider">
+            <div class="services-track" id="servicesTrack">
+                <!-- Карточка услуги 1 (обычная) -->
+                <div class="service-card" data-tag="massage" data-time="60" data-price="2500">
+                    <div class="service-image">
+                        <img src="../img/mas_2.png">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tag">Массаж тела</div>
+                        <h4>Классический массаж тела</h4>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price-block">
+                            <h4 class="service-price">2500 ₽</h4>
+                            <div class="service-line"></div>
+                            <p class="service-duration">60 минут</p>
+                        </div>
+                        <a href="#" class="service-btn" onclick="openBookingModal(); return false;">Записаться</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка услуги 2 (обычная) -->
+                <div class="service-card" data-tag="face" data-time="60" data-price="2500">
+                    <div class="service-image">
+                        <img src="../img/mas_3.png">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tag">Уход за лицом</div>
+                        <h4>Классический массаж лица</h4>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price-block">
+                            <h4 class="service-price">2500 ₽</h4>
+                            <div class="service-line"></div>
+                            <p class="service-duration">60 минут</p>
+                        </div>
+                        <a href="#" class="service-btn" onclick="openBookingModal(); return false;">Записаться</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка услуги 3 (обычная) -->
+                <!-- <div class="service-card" data-tag="massage" data-time="60" data-price="2500">
+                    <div class="service-image">
+                        <img src="../img/mas_4.png">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tag">Массаж тела</div>
+                        <h4>Массаж с горячим песком и солью</h4>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price-block">
+                            <h4 class="service-price">2500 ₽</h4>
+                            <div class="service-line"></div>
+                            <p class="service-duration">60 минут</p>
+                        </div>
+                        <a href="#" class="service-btn" onclick="openBookingModal(); return false;">Записаться</a>
+                    </div>
+                </div> -->
+                
+                <!-- Карточка услуги 4 (обычная) -->
+                <div class="service-card" data-tag="spa" data-time="60" data-price="2500">
+                    <div class="service-image">
+                        <img src="../img/mas_5.png">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tag">SPA-ритуал</div>
+                        <h4>SPA-ритуал «Морские водоросли»</h4>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price-block">
+                            <h4 class="service-price">2500 ₽</h4>
+                            <div class="service-line"></div>
+                            <p class="service-duration">60 минут</p>
+                        </div>
+                        <a href="#" class="service-btn" onclick="openBookingModal(); return false;">Записаться</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка услуги 6 (обычная) -->
+                <div class="service-card" data-tag="spa" data-time="60" data-price="2500">
+                    <div class="service-image">
+                        <img src="../img/mas_7.png">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tag">SPA-ритуал</div>
+                        <h4>SPA-ритуал «Полное погружение»</h4>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price-block">
+                            <h4 class="service-price">2500 ₽</h4>
+                            <div class="service-line"></div>
+                            <p class="service-duration">60 минут</p>
+                        </div>
+                        <a href="#" class="service-btn" onclick="openBookingModal(); return false;">Записаться</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка услуги 7 (обычная) -->
+                <div class="service-card" data-tag="massage" data-time="60" data-price="2500">
+                    <div class="service-image">
+                        <img src="../img/mas_8.png">
+                    </div>
+                    <div class="service-info">
+                        <div class="service-tag">Массаж тела</div>
+                        <h4>Восточный массаж</h4>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price-block">
+                            <h4 class="service-price">2500 ₽</h4>
+                            <div class="service-line"></div>
+                            <p class="service-duration">60 минут</p>
+                        </div>
+                        <a href="#" class="service-btn" onclick="openBookingModal(); return false;">Записаться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Точки-переключатели для услуг -->
+        <div class="services-dots" id="servicesDots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+        <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Первый блок: логотип и текст -->
+            <div class="footer-info">
+                <img src="img/logo.png" class="footer-logo" alt="Логотип">
+                <h4 class="footer-text">Центр восточных массажных<br>практик в Санкт-петербурге</h4>
+                <div class="footer-contact-links">
+                    <h4 href="tel:+78121234567" class="footer-contact-link">тел. +7 (921) 456-78-99</h4>
+                    <h4 href="mailto:info@massage.ru" class="footer-contact-link">info@massage.ru</h4>
+                    <h4 class="footer-contact-link">Россия, г. Санкт-Петербург,<br>ул. Великолепная д.2</h4>
+                    <h4 class="footer-contact-link">с 10:00 до 20:00</h4>
+                </div>
+            </div>
+            
+            <!-- Второй блок: навигация -->
+            <div class="footer-nav">
+                <a href="#" class="footer-nav-link">Главная</a>
+                <a href="#" class="footer-nav-link">Услуги</a>
+                <a href="#" class="footer-nav-link">Мастера</a>
+                <a href="#" class="footer-nav-link">О нас</a>
+                <a href="#" class="footer-nav-link">Блог</a>
+                <a href="#" class="footer-nav-link">Контакты</a>
+            </div>
+            
+            <!-- Третий блок: свяжитесь с нами -->
+            <div class="footer-form">
+                <h4 class="footer-form-title">Свяжитесь с нами</h4>
+                <form class="footer-contact-form" id="footerForm">
+                    <div class="form-group">
+                        <label for="footer-name">Имя</label>
+                        <input type="text" id="footer-name" name="name" placeholder="Ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="footer-phone">Телефон</label>
+                        <input type="tel" id="footer-phone" name="phone" placeholder="+7 (___) ___-__-__">
+                    </div>
+                    <div class="form-group">
+                        <label for="footer-email">E-mail</label>
+                        <input type="email" id="footer-email" name="email" placeholder="example@mail.ru">
+                    </div>
+                    <button type="submit" class="footer-submit-btn">Отправить</button>
+                    
+                </form>
+            </div>
+        </div>
+    </footer>
+
+        <!-- Модальное окно формы -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalCloseBtn">
+                <span></span>
+                <span></span>
+            </button>
+            <h3 class="modal-title">Записаться на массаж</h3>
+            <p class="modal-subtitle">Оставьте свои контактные данные, и наш администратор свяжется с вами для подтверждения записи</p>
+            
+            <form class="modal-form" id="bookingForm">
+                <div class="modal-form-group">
+                    <label for="modal-name">Ваше имя</label>
+                    <input type="text" id="modal-name" name="name">
+                </div>
+                <div class="modal-form-group">
+                    <label for="modal-phone">Телефон</label>
+                    <input type="tel" id="modal-phone" name="phone">
+                </div>
+                <div class="modal-form-group">
+                    <label for="modal-email">E-mail</label>
+                    <input type="email" id="modal-email" name="email">
+                </div>
+                
+                <div class="modal-checkboxes">
+                    <label class="modal-checkbox">
+                        <input type="checkbox" name="privacy" class="modal-checkbox-input">
+                        <span class="modal-checkbox-custom"></span>
+                        <a href="#" class="modal-checkbox-label">политика конфиденциальности</a>
+                    </label>
+                    <label class="modal-checkbox">
+                        <input type="checkbox" name="offer" class="modal-checkbox-input">
+                        <span class="modal-checkbox-custom"></span>
+                        <a href="#" class="modal-checkbox-label">обработка персональных данных</a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="modal-submit-btn">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/services-detail.js"></script>
+    <script src="../js/modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+/* HERO СЕКЦИЯ */
+.service-hero {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+.service-hero-outer {
+    background-image: url('../img/service-detail-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 40px;
+    border-radius: 32px;
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .service-hero-outer {
+        margin: 16px;
+        margin-bottom: 16px;
+        border-radius: 24px;
+        background-image: none;
+        background-color: transparent;
+        min-height: auto;
+        padding: 0;
+    }
+}
+
+.service-hero-outer > * {
+    position: relative;
+}
+
+/* Навигация на мобильной версии - без фона */
+@media (max-width: 768px) {
+    .service-hero-outer .navbar {
+        background-color: transparent;
+        border-radius: 0;
+        margin: 0;
+        padding: 20px 0;
+        width: 100%;
+    }
+    
+    .service-hero-outer .burger span {
+        background-color: #000000;
+    }
+    
+    .service-hero-outer .logo {
+        filter: none;
+    }
+}
+
+/* Контент hero */
+.service-hero-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    padding: 0 120px 100px 120px;
+}
+
+@media (max-width: 1440px) {
+    .service-hero-content {
+        padding: 0 0px 80px 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-hero-content {
+        padding: 0;
+        gap: 0;
+        background-color: transparent;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Картинка после навигации на мобильной версии */
+.service-hero-mobile-image {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .service-hero-mobile-image {
+        display: block;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 16px 16px 24px 24px;
+        margin-top: 0;
+    }
+    
+    .service-hero-mobile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Блок с текстом после картинки - вертикальное расположение */
+.service-hero-text-block {
+    display: contents;
+}
+
+@media (max-width: 768px) {
+    .service-hero-text-block {
+        display: block;
+        background-color: #ECF0E1;
+        padding: 40px 0px 40px 0px;
+        border-radius: 0 0 24px 24px;
+    }
+}
+
+/* Заголовок - со 2 колонки */
+.service-hero-title {
+    color: #FFFFFF;
+    grid-column: 2 / 12;
+    margin: 0;
+    margin-top: 120px;
+
+}
+
+@media (max-width: 1024px) {
+    .service-hero-title {
+        font-size: 48px;
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-hero-title {
+        font-size: 32px;
+        margin-top: 0;
+        margin-bottom: 16px;
+        text-align: left;
+        color: #000000;
+    }
+}
+
+/* Тэг - со 2 колонки */
+.service-hero-tag {
+    font-family: 'GilroyMedium', sans-serif;
+    font-size: 16px;
+    color: #000000;
+    background-color: #FFFFFF;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 32px;
+    grid-column: 2 / 12;
+    width: fit-content;
+    height: 35px;
+    /* margin-top: -50px */
+}
+
+@media (max-width: 768px) {
+    .service-hero-tag {
+    color: #ffffff;
+    background-color: #2C4A61;  
+        margin-bottom: 56px;
+
+    }
+}
+
+/* Нижний блок с ценой и кнопкой */
+.service-hero-footer {
+    grid-column: 2 / 12;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 100px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .service-hero-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 0;
+        gap: 20px;
+    }
+}
+
+/* Блок цена, стрелка, время */
+.service-hero-price-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 60px;
+    flex: 1;
+}
+
+.service-hero-price {
+    font-family: 'GilroySemibold', sans-serif;
+    font-size: 40px;
+    color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .service-hero-price {
+        color: #000000;
+        font-size: 24px;
+    }
+}
+
+/* Стрелка */
+.service-hero-arrow {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.service-hero-arrow-line {
+    width: 100%;
+    height: 1px;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .service-hero-arrow-line {
+        background-color: #000000;
+    }
+}
+
+.service-hero-arrow-fork {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 30px;
+}
+
+.service-hero-arrow-fork::before,
+.service-hero-arrow-fork::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 20px;
+    background-color: #FFFFFF;
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .service-hero-arrow-fork::before,
+    .service-hero-arrow-fork::after {
+        background-color: #000000;
+    }
+}
+
+.service-hero-arrow-fork::before {
+    transform: rotate(-45deg);
+    top: -2px;
+    right: 4px;
+}
+
+.service-hero-arrow-fork::after {
+    transform: rotate(45deg);
+    bottom: -2px;
+    right: 4px;
+}
+
+.service-hero-duration {
+    font-family: 'GilroyMedium', sans-serif;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .service-hero-duration {
+        color: #000000;
+        font-size: 20px;
+    }
+}
+
+/* Кнопка */
+.btn-primary {
+    width: 33%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+
+@media (max-width: 768px) {
+    .btn-primary {
+        width: 100%;
+    }
+}
+
+
+/* ========== БЛОК С КОЛОНКАМИ ========== */
+.service-info-section {
+    margin: 80px 40px;
+}
+
+@media (max-width: 768px) {
+    .service-info-section {
+        margin: 40px 16px;
+    }
+}
+
+.service-info-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+}
+
+/* Левая колонка */
+.service-info-left {
+    grid-column: 2 / 7;
+}
+
+/* Правая колонка */
+.service-info-right {
+    grid-column: 7 / 12;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+/* Блок с заголовком и текстом */
+.service-info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+/* Адаптивность для мобильной версии */
+@media (max-width: 768px) {
+    .service-info-container {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+    .service-info-left {
+        grid-column: auto;
+    }
+    .service-info-right {
+        grid-column: auto;
+        gap: 32px;
+    }
+    .service-info-block {
+        gap: 16px;
+    }
+    .service-info-text {
+        font-size: 14px;
+    }
+}

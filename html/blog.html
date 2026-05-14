@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Блог | Массажный салон</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/blog.css">
+</head>
+<body>
+    <!-- Первый экран: hero с навигацией -->
+    <section class="hero_page">
+        <div class="services-hero-outer">
+            <nav class="navbar">
+                <img src="../img/logo.png" class="logo" alt="Логотип" id="mainLogo">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="services.html" class="active">Услуги</a></li>
+                    <li><a href="masters.html">Мастера</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+                <button class="burger" id="burgerBtn" aria-label="Меню">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+
+            <div class="services-hero-title">
+                <h1>Блог</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фильтры -->
+    <section class="blog-filters">
+        <div class="blog-filters-container">
+            <button class="blog-filter-btn active" data-filter="all">Все</button>
+            <button class="blog-filter-btn" data-filter="materials">О материалах</button>
+            <button class="blog-filter-btn" data-filter="techniques">О техниках</button>
+        </div>
+    </section>
+
+        <!-- Карточки блога -->
+    <section>
+        <!-- Карточка 1 (обычная) -->
+        <div class="blog-card" data-category="materials">
+            <div class="blog-card-image">
+                <img src="../img/blog1.png">
+            </div>
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">Магия масел и их роль</h3>
+                <div class="blog-card-text-wrapper">
+                    <div class="blog-card-text">
+                        <p>Почему мы так внимательны к выбору масел?<br><br>
+                        Многие думают, что масло в массаже нужно только для того, чтобы руки мастера лучше скользили. На самом деле — это полноценный компонент ухода, который работает на клеточном уровне.
+                        <br><br>
+                        Как это работает
+                        <br><br>
+                        Кожа — это самый большой орган нашего тела. Качественное масло служит «проводником» (трансдермальным агентом), который помогает активным веществам проникать глубже в дерму.
+                        </p>
+                        <p>На что мы обращаем внимание при выборе
+                        <br><br>
+                        Базовые масла. Мы используем масла холодного отжима (миндальное, жожоба, виноградной косточки). В них сохранены витамины E, A и антиоксиданты.
+                        <br>
+                        Отсутствие парафина. Мы не используем дешевые синтетические основы, которые забивают поры и создают эффект «парника».
+                        <br>
+                        Скорость впитывания. Наши масла подобраны так, чтобы не оставлять липкой пленки, позволяя коже дышать.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка 2 (второй вариант - с фоном и кнопкой) -->
+        <div class="blog-card-alt" data-category="materials">
+            <div class="blog-card-alt-image">
+                <img src="../img/blog2.png">
+            </div>
+            <div class="blog-card-alt-content">
+                <h3 class="blog-card-alt-title">Ароматерапия в массаже</h3>
+                <div class="blog-card-alt-text-wrapper">
+                    <div class="blog-card-alt-text">
+                        <p>Массаж — это не только про тело, но и про состояние души. Мы дополняем наши процедуры селективными эфирными маслами. Ароматерапия помогает настроиться на нужную волну еще до начала прикосновений.
+                        <br><br>
+                        Запахи напрямую связаны с лимбической системой мозга, которая отвечает за эмоции и память. Правильно подобранный аромат может мгновенно переключить ваш мозг из режима «стресс/работа» в режим «отдых/восстановление».
+                        </p>
+                        <p>Наши фавориты
+                        <br><br>
+                        Лаванда — для глубокого расслабления и сна.
+                        <br>
+                        Эвкалипт — для бодрости и снятия заложенности.
+                        <br>
+                        Иланг-иланг — для снятия стресса и эмоционального подъема.
+                        <br></p>
+                    </div>
+                </div>
+                <a href="article_1.html" class="master-btn">
+                    <span>Подробнее</span>
+                    <div class="service-large-arrow">
+                        <div class="service-large-arrow-line"></div>
+                        <div class="service-large-arrow-fork"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Карточка 1 (обычная) -->
+        <div class="blog-card" data-category="materials">
+            <div class="blog-card-image">
+                <img src="../img/blog3.png">
+            </div>
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">Гигиена и безопасность в салоне</h3>
+                <div class="blog-card-text-wrapper">
+                    <div class="blog-card-text">
+                        <p>Ваша безопасность — наш главный приоритет. Мы понимаем, что доверить свое тело другому человеку — это большой шаг. Поэтому в нашем салоне соблюдаются строгие протоколы:<br><br>
+                        Одноразовые материалы. Простыни, шапочки, салфетки и даже тапочки — всё это строго одноразовое. После каждого клиента зона массажа полностью обновляется.<br><br>
+                        Обработка рук и поверхностей. Мастера проходят гигиеническую обработку перед началом работы. Все рабочие поверхности дезинфицируются профессиональными средствами после каждого визита.
+                        </p>
+                        <p>Контроль косметики. Мы используем только сертифицированные профессиональные бренды. Каждая упаковка проходит строгий контроль срока годности и условий хранения.
+                        <br><br>
+                        Чистота воздуха. В кабинетах поддерживается оптимальный уровень влажности и чистоты воздуха, что важно для глубокого дыхания во время релаксации.
+                        <br><br>
+                        Ваше спокойствие — это фундамент, на котором строится ваш отдых.
+                        </p>
+                    </div>
+                    <!-- Кнопка будет добавлена через JS -->
+                </div>
+            </div>
+        </div>
+
+                <!-- Карточка 3 (третий вариант - с фоновым изображением) -->
+        <div class="blog-card-bg" data-category="techniques">
+            <div class="blog-card-bg-overlay"></div>
+            <div class="blog-card-bg-content">
+                <h3 class="blog-card-bg-title">Что такое  триггерные точки?</h3>
+                <div class="blog-card-bg-bottom">
+                    <div class="blog-card-bg-text-wrapper">
+                        <div class="blog-card-bg-text">
+                            <p>Знакомо чувство, когда в мышце словно «застрял камень»? Это триггерная точка.<br><br>
+                            Триггер — это участок мышцы в состоянии постоянного спазма. Он может вызывать боль, которая «отдает» в другую часть тела (например, от шеи в руку).<br><br>
+                            Наши мастера используют техники глубокого точечного воздействия. Мы находим этот узел 
+                            и мягко, но уверенно воздействуем на него, чтобы восстановить нормальное кровоснабжение 
+                            и расслабить мышцу. Боль проходит, возвращается подвижность!</p>
+                        </div>
+                        <button class="read-more-btn-bg" data-readmore="card3">Читать далее</button>
+                    </div>
+                    <a href="article_2.html" class="blog-card-bg-btn">
+                        <!-- <a href="#" class="master-btn" onclick="openMasterModal(1); return false;"> -->
+                        <span>Подробнее</span>
+                        <div class="service-large-arrow">
+                            <div class="service-large-arrow-line"></div>
+                            <div class="service-large-arrow-fork"></div>
+                        </div>
+                    <!-- </a> -->
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка 1 (обычная) -->
+        <div class="blog-card" data-category="techniques">
+            <div class="blog-card-image">
+                <img src="../img/blog5.png">
+            </div>
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">Подготовка к массажу</h3>
+                <div class="blog-card-text-wrapper">
+                    <div class="blog-card-text">
+                        <p>Чтобы вы получили 100% пользы от процедуры и не чувствовали дискомфорта, мы подготовили несколько важных рекомендаций.
+                        <br><br>
+                        За час до сеанса
+                        <br><br>
+                        Не переедайте. Слишком полный желудок будет мешать вам лежать на животе и может вызвать дискомфорт при глубоком массаже. Идеально — легкий перекус.
+                        <br><br>
+                        Психологический настрой. Постарайтесь завершить важные звонки и рабочие чаты. Массаж — это ваше время «оффлайн».
+                        </p>
+                        <p>Во время и после сеанса
+                        <br><br>
+                        Водный баланс. Это критически важно! Массаж активизирует лимфоток и выводит токсины. Чтобы помочь организму, выпейте стакан чистой воды сразу после процедуры.
+                        <br><br>
+                        Прислушайтесь к телу. После массажа может возникнуть легкая сонливость или приятная мышечная слабость — это нормальная реакция нервной системы. Дайте себе 15–20 минут, чтобы плавно вернуться в рабочий ритм.
+                        <br><br>
+                        Важно: Если у вас есть острые воспаления, высокая температура или кожные заболевания, обязательно сообщите об этом мастеру перед началом.</p>
+                    </div>
+                    <!-- Кнопка будет добавлена через JS -->
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <img src="../img/logo.png" class="footer-logo" alt="Логотип">
+                <h4 class="footer-text">Центр восточных массажных<br>практик в Санкт-петербурге</h4>
+                <div class="footer-contact-links">
+                    <h4 href="tel:+78121234567" class="footer-contact-link">тел. +7 (921) 456-78-99</h4>
+                    <h4 href="mailto:info@massage.ru" class="footer-contact-link">info@massage.ru</h4>
+                    <h4 class="footer-contact-link">Россия, г. Санкт-Петербург,<br>ул. Великолепная д.2</h4>
+                    <h4 class="footer-contact-link">с 10:00 до 20:00</h4>
+                </div>
+            </div>
+            
+            <div class="footer-nav">
+                <a href="index.html" class="footer-nav-link">Главная</a>
+                <a href="services-page.html" class="footer-nav-link">Услуги</a>
+                <a href="masters.html" class="footer-nav-link">Мастера</a>
+                <a href="about.html" class="footer-nav-link">О нас</a>
+                <a href="blog.html" class="footer-nav-link">Блог</a>
+                <a href="#" class="footer-nav-link">Контакты</a>
+            </div>
+            
+            <div class="footer-form">
+                <h4 class="footer-form-title">Свяжитесь с нами</h4>
+                <form class="footer-contact-form" id="footerForm">
+                    <div class="form-group">
+                        <label for="footer-name">Имя</label>
+                        <input type="text" id="footer-name" name="name" placeholder="Ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <label for="footer-phone">Телефон</label>
+                        <input type="tel" id="footer-phone" name="phone" placeholder="+7 (___) ___-__-__">
+                    </div>
+                    <div class="form-group">
+                        <label for="footer-email">E-mail</label>
+                        <input type="email" id="footer-email" name="email" placeholder="example@mail.ru">
+                    </div>
+                    <button type="submit" class="footer-submit-btn">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/menu.js"></script>
+    <script src="../js/blog.js"></script>
+</body>
+</html>
