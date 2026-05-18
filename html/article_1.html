@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../styles/modal.css">
 </head>
 <body>
-    <!-- Первый экран с навигацией -->
+    <!-- Первый экран -->
     <section class="article-hero article-hero-1">
         <div class="article-hero-outer">
             <nav class="navbar">
@@ -26,7 +26,7 @@
                     <span></span><span></span><span></span>
                 </button>
             </nav>
-            <!-- Картинка для мобильной версии -->
+            <!-- Фон для мобильной версии -->
             <div class="article-hero-mobile-image">
                 <img src="../img/article-bg-1.png">
             </div>
@@ -74,7 +74,6 @@
             </div>
 
             <!-- Блок 3 -->
-
             <div class="article-block-row">
                 <div class="article-image-block">
                     <img src="../img/article13.png">
@@ -112,8 +111,6 @@
                     Ладан — помогает глубоко дышать и снимает зажимы в теле.
                     </div>
                 </div>
-
-
 
             <!-- Блок 4 -->
             <div class="article-block-full-image">
@@ -153,11 +150,12 @@
             </div>
     </section>
 
-    <!-- ФУТЕР -->
+    <!-- Футер -->
     <footer class="footer">
         <div class="footer-container">
+            <!-- Информация -->
             <div class="footer-info">
-                <img src="../img/logo.png" class="footer-logo" alt="Логотип">
+                <img src="../img/logo.png" class="footer-logo">
                 <h4 class="footer-text">Центр восточных массажных<br>практик в Санкт-петербурге</h4>
                 <div class="footer-contact-links">
                     <h4 href="tel:+78121234567" class="footer-contact-link">тел. +7 (921) 456-78-99</h4>
@@ -167,6 +165,7 @@
                 </div>
             </div>
             
+            <!-- Навигация -->
             <div class="footer-nav">
                 <a href="../index.html" class="footer-nav-link">Главная</a>
                 <a href="services.html" class="footer-nav-link">Услуги</a>
@@ -176,20 +175,21 @@
                 <a href="contacts.html" class="footer-nav-link">Контакты</a>
             </div>
             
+            <!-- Обратная связь -->
             <div class="footer-form">
                 <h4 class="footer-form-title">Свяжитесь с нами</h4>
                 <form class="footer-contact-form" id="footerForm">
                     <div class="form-group">
                         <label for="footer-name">Имя</label>
-                        <input type="text" id="footer-name" name="name" placeholder="Ваше имя">
+                        <input type="text" id="footer-name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="footer-phone">Телефон</label>
-                        <input type="tel" id="footer-phone" name="phone" placeholder="+7 (___) ___-__-__">
+                        <input type="tel" id="footer-phone" name="phone" required>
                     </div>
                     <div class="form-group">
                         <label for="footer-email">E-mail</label>
-                        <input type="email" id="footer-email" name="email" placeholder="example@mail.ru">
+                        <input type="email" id="footer-email" name="email" required>
                     </div>
                     <button type="submit" class="footer-submit-btn">Отправить</button>
                 </form>
@@ -198,5 +198,7 @@
     </footer>
 
     <script src="../js/services-detail.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../js/forma.js"></script>
 </body>
 </html>

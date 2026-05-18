@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styles/masters.css">
 </head>
 <body>
-    <!-- Первый блок: hero с навигацией -->
+    <!-- Первый блок -->
     <section class="hero_page">
         <div class="services-hero-outer">
             <nav class="navbar">
@@ -142,12 +142,12 @@
             </div>
     </section>
 
-        <!-- ФУТЕР -->
+    <!-- Футер -->
     <footer class="footer">
         <div class="footer-container">
-
+            <!-- Информация -->
             <div class="footer-info">
-                <img src="../img/logo.png" class="footer-logo" alt="Логотип">
+                <img src="../img/logo.png" class="footer-logo">
                 <h4 class="footer-text">Центр восточных массажных<br>практик в Санкт-петербурге</h4>
                 <div class="footer-contact-links">
                     <h4 href="tel:+78121234567" class="footer-contact-link">тел. +7 (921) 456-78-99</h4>
@@ -157,32 +157,33 @@
                 </div>
             </div>
             
+            <!-- Навигация -->
             <div class="footer-nav">
-                <a href="#" class="footer-nav-link">Главная</a>
-                <a href="#" class="footer-nav-link">Услуги</a>
-                <a href="#" class="footer-nav-link">Мастера</a>
-                <a href="#" class="footer-nav-link">О нас</a>
-                <a href="#" class="footer-nav-link">Блог</a>
-                <a href="#" class="footer-nav-link">Контакты</a>
+                <a href="../index.html" class="footer-nav-link">Главная</a>
+                <a href="services.html" class="footer-nav-link">Услуги</a>
+                <a href="masters.html" class="footer-nav-link">Мастера</a>
+                <a href="about.html" class="footer-nav-link">О нас</a>
+                <a href="blog.html" class="footer-nav-link">Блог</a>
+                <a href="contacts.html" class="footer-nav-link">Контакты</a>
             </div>
             
+            <!-- Обратная связь -->
             <div class="footer-form">
                 <h4 class="footer-form-title">Свяжитесь с нами</h4>
                 <form class="footer-contact-form" id="footerForm">
                     <div class="form-group">
                         <label for="footer-name">Имя</label>
-                        <input type="text" id="footer-name" name="name" placeholder="Ваше имя">
+                        <input type="text" id="footer-name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="footer-phone">Телефон</label>
-                        <input type="tel" id="footer-phone" name="phone" placeholder="+7 (___) ___-__-__">
+                        <input type="tel" id="footer-phone" name="phone" required>
                     </div>
                     <div class="form-group">
                         <label for="footer-email">E-mail</label>
-                        <input type="email" id="footer-email" name="email" placeholder="example@mail.ru">
+                        <input type="email" id="footer-email" name="email" required>
                     </div>
                     <button type="submit" class="footer-submit-btn">Отправить</button>
-                    
                 </form>
             </div>
         </div>
@@ -212,5 +213,7 @@
     <script src="../js/menu.js"></script>
     <script src="../js/services-page.js"></script>
     <script src="../js/masters.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../js/forma.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styles/about.css">
 </head>
 <body>
-    <!-- Первый экран: hero с навигацией -->
+    <!-- Первый экран-->
     <section class="hero_page">
         <div class="services-hero-outer">
             <nav class="navbar">
@@ -32,13 +32,12 @@
         </div>
     </section>
 
-    <!-- Блок с текстом (ширина 900px, прижатый к правому краю) -->
     <section>
         <div class="about-text-wrapper">
             <div class="about-text">Мы - команда мастеров с опытом и медицинским образованием. Мы горим своим делом и хотим также зажечь каждого!</div>
         </div>
 
-    <!-- Блок с 3 квадратными картинками -->
+    <!-- Блок 1 -->
         <div class="about-gallery-container">
             <div class="about-gallery-item">
                 <img src="../img/about1.png">
@@ -51,7 +50,7 @@
             </div>
         </div>
 
-    <!-- Блок с текстом и картинкой (2 колонки: 1-7 - текст и кнопка, 9-12 - картинка) -->
+    <!-- Блок 2-->
         <div class="about-feature-container">
             <div class="about-feature-text">
                 <p>
@@ -63,7 +62,7 @@
                     Мы понимаем, что массаж начинается еще до касания рук мастера. Тонкие ароматы, мягкий свет, идеальная температура и тишина — мы продумали каждую деталь, чтобы вы могли полностью отключиться от внешнего мира.
                     <br><br>
                 </p>
-                <a href="#" class="master-btn" onclick="openMasterModal(1); return false;">
+                <a href="masters.html" class="master-btn" onclick="openMasterModal(1); return false;">
                     <span>К нашим мастерам</span>
                     <div class="service-large-arrow">
                         <div class="service-large-arrow-line"></div>
@@ -79,14 +78,14 @@
 
     <section>
 
-    <!-- Секция 2: два равных блока -->
+    <!-- Блок 3 -->
         <div class="about-two-blocks">
             <div class="about-two-blocks-left">
                 <h3>Материалы, которые мы используем</h3>
                 <p>Мы выбираем чистоту во всем и отдаем предпочтение натуральным компонентам: морской соли, природному песку, органическим маслам и травам. Это позволяет нам работать с вашим телом максимально бережно, не перегружая его химией.
                 <br><br>Никакой синтетики — только честные, экологически чистые составы, которые бережно заботятся о вашем теле и помогают достичь глубокого расслабления без побочных эффектов.</p>
             </div>
-            <a href="#" class="master-btn" onclick="openMasterModal(1); return false;">
+            <a href="blog.html" class="master-btn" onclick="openMasterModal(1); return false;">
                 <div class="service-large-arrow">
                     <div class="service-large-arrow-line"></div>
                     <div class="service-large-arrow-fork"></div>
@@ -94,7 +93,6 @@
             </a>
         </div>
 
-        <!-- Секция 3: два изображения (одно на 2 колонки, второе квадратное) -->
         <div class="about-double-image">
             <div class="about-double-image-large">
                 <img src="../img/about5.png">
@@ -104,7 +102,6 @@
             </div>
         </div>
 
-        <!-- Секция 4: изображение на одну колонку и текст -->
         <div class="about-feature-container2">
             <div class="about-feature-image2">
                 <img src="../img/about7.png">
@@ -116,12 +113,12 @@
     </section>
 
 
-        <!-- ФУТЕР -->
+    <!-- Футер -->
     <footer class="footer">
         <div class="footer-container">
-
+            <!-- Информация -->
             <div class="footer-info">
-                <img src="../img/logo.png" class="footer-logo" alt="Логотип">
+                <img src="../img/logo.png" class="footer-logo">
                 <h4 class="footer-text">Центр восточных массажных<br>практик в Санкт-петербурге</h4>
                 <div class="footer-contact-links">
                     <h4 href="tel:+78121234567" class="footer-contact-link">тел. +7 (921) 456-78-99</h4>
@@ -131,32 +128,33 @@
                 </div>
             </div>
             
+            <!-- Навигация -->
             <div class="footer-nav">
-                <a href="#" class="footer-nav-link">Главная</a>
-                <a href="#" class="footer-nav-link">Услуги</a>
-                <a href="#" class="footer-nav-link">Мастера</a>
-                <a href="#" class="footer-nav-link">О нас</a>
-                <a href="#" class="footer-nav-link">Блог</a>
-                <a href="#" class="footer-nav-link">Контакты</a>
+                <a href="../index.html" class="footer-nav-link">Главная</a>
+                <a href="services.html" class="footer-nav-link">Услуги</a>
+                <a href="masters.html" class="footer-nav-link">Мастера</a>
+                <a href="about.html" class="footer-nav-link">О нас</a>
+                <a href="blog.html" class="footer-nav-link">Блог</a>
+                <a href="contacts.html" class="footer-nav-link">Контакты</a>
             </div>
             
+            <!-- Обратная связь -->
             <div class="footer-form">
                 <h4 class="footer-form-title">Свяжитесь с нами</h4>
                 <form class="footer-contact-form" id="footerForm">
                     <div class="form-group">
                         <label for="footer-name">Имя</label>
-                        <input type="text" id="footer-name" name="name" placeholder="Ваше имя">
+                        <input type="text" id="footer-name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="footer-phone">Телефон</label>
-                        <input type="tel" id="footer-phone" name="phone" placeholder="+7 (___) ___-__-__">
+                        <input type="tel" id="footer-phone" name="phone" required>
                     </div>
                     <div class="form-group">
                         <label for="footer-email">E-mail</label>
-                        <input type="email" id="footer-email" name="email" placeholder="example@mail.ru">
+                        <input type="email" id="footer-email" name="email" required>
                     </div>
                     <button type="submit" class="footer-submit-btn">Отправить</button>
-                    
                 </form>
             </div>
         </div>
@@ -165,5 +163,8 @@
     <script src="../js/menu.js"></script>
     <script src="../js/modal.js"></script>
     <script src="../js/about.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../js/forma.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styles/blog.css">
 </head>
 <body>
-    <!-- Первый экран: hero с навигацией -->
+    <!-- Первый экран -->
     <section class="hero_page">
         <div class="services-hero-outer">
             <nav class="navbar">
@@ -41,9 +41,9 @@
         </div>
     </section>
 
-        <!-- Карточки блога -->
+    <!-- Карточки блога -->
     <section>
-        <!-- Карточка 1 (обычная) -->
+        <!-- Карточка 1 -->
         <div class="blog-card" data-category="materials">
             <div class="blog-card-image">
                 <img src="../img/blog1.png">
@@ -72,7 +72,7 @@
             </div>
         </div>
 
-        <!-- Карточка 2 (второй вариант - с фоном и кнопкой) -->
+        <!-- Карточка 2 -->
         <div class="blog-card-alt" data-category="materials">
             <div class="blog-card-alt-image">
                 <img src="../img/blog2.png">
@@ -105,7 +105,7 @@
             </div>
         </div>
 
-        <!-- Карточка 1 (обычная) -->
+        <!-- Карточка 3 -->
         <div class="blog-card" data-category="materials">
             <div class="blog-card-image">
                 <img src="../img/blog3.png">
@@ -125,12 +125,11 @@
                         Ваше спокойствие — это фундамент, на котором строится ваш отдых.
                         </p>
                     </div>
-                    <!-- Кнопка будет добавлена через JS -->
                 </div>
             </div>
         </div>
 
-                <!-- Карточка 3 (третий вариант - с фоновым изображением) -->
+        <!-- Карточка 4 -->
         <div class="blog-card-bg" data-category="techniques">
             <div class="blog-card-bg-overlay"></div>
             <div class="blog-card-bg-content">
@@ -147,19 +146,17 @@
                         <button class="read-more-btn-bg" data-readmore="card3">Читать далее</button>
                     </div>
                     <a href="article_2.html" class="blog-card-bg-btn">
-                        <!-- <a href="#" class="master-btn" onclick="openMasterModal(1); return false;"> -->
                         <span>Подробнее</span>
                         <div class="service-large-arrow">
                             <div class="service-large-arrow-line"></div>
                             <div class="service-large-arrow-fork"></div>
                         </div>
-                    <!-- </a> -->
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Карточка 1 (обычная) -->
+        <!-- Карточка 5 -->
         <div class="blog-card" data-category="techniques">
             <div class="blog-card-image">
                 <img src="../img/blog5.png">
@@ -184,18 +181,18 @@
                         <br><br>
                         Важно: Если у вас есть острые воспаления, высокая температура или кожные заболевания, обязательно сообщите об этом мастеру перед началом.</p>
                     </div>
-                    <!-- Кнопка будет добавлена через JS -->
                 </div>
             </div>
         </div>
 
     </section>
     
-    <!-- ФУТЕР -->
+    <!-- Футер -->
     <footer class="footer">
         <div class="footer-container">
+            <!-- Информация -->
             <div class="footer-info">
-                <img src="../img/logo.png" class="footer-logo" alt="Логотип">
+                <img src="../img/logo.png" class="footer-logo">
                 <h4 class="footer-text">Центр восточных массажных<br>практик в Санкт-петербурге</h4>
                 <div class="footer-contact-links">
                     <h4 href="tel:+78121234567" class="footer-contact-link">тел. +7 (921) 456-78-99</h4>
@@ -205,29 +202,31 @@
                 </div>
             </div>
             
+            <!-- Навигация -->
             <div class="footer-nav">
-                <a href="index.html" class="footer-nav-link">Главная</a>
-                <a href="services-page.html" class="footer-nav-link">Услуги</a>
+                <a href="../index.html" class="footer-nav-link">Главная</a>
+                <a href="services.html" class="footer-nav-link">Услуги</a>
                 <a href="masters.html" class="footer-nav-link">Мастера</a>
                 <a href="about.html" class="footer-nav-link">О нас</a>
                 <a href="blog.html" class="footer-nav-link">Блог</a>
-                <a href="#" class="footer-nav-link">Контакты</a>
+                <a href="contacts.html" class="footer-nav-link">Контакты</a>
             </div>
             
+            <!-- Обратная связь -->
             <div class="footer-form">
                 <h4 class="footer-form-title">Свяжитесь с нами</h4>
                 <form class="footer-contact-form" id="footerForm">
                     <div class="form-group">
                         <label for="footer-name">Имя</label>
-                        <input type="text" id="footer-name" name="name" placeholder="Ваше имя">
+                        <input type="text" id="footer-name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="footer-phone">Телефон</label>
-                        <input type="tel" id="footer-phone" name="phone" placeholder="+7 (___) ___-__-__">
+                        <input type="tel" id="footer-phone" name="phone" required>
                     </div>
                     <div class="form-group">
                         <label for="footer-email">E-mail</label>
-                        <input type="email" id="footer-email" name="email" placeholder="example@mail.ru">
+                        <input type="email" id="footer-email" name="email" required>
                     </div>
                     <button type="submit" class="footer-submit-btn">Отправить</button>
                 </form>
@@ -235,7 +234,10 @@
         </div>
     </footer>
 
+
     <script src="../js/menu.js"></script>
     <script src="../js/blog.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../js/forma.js"></script>
 </body>
 </html>
