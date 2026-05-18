@@ -398,11 +398,11 @@
             <!-- Навигация -->
             <div class="footer-nav">
                 <a href="#" class="footer-nav-link">Главная</a>
-                <a href="#" class="footer-nav-link">Услуги</a>
-                <a href="#" class="footer-nav-link">Мастера</a>
-                <a href="#" class="footer-nav-link">О нас</a>
-                <a href="#" class="footer-nav-link">Блог</a>
-                <a href="#" class="footer-nav-link">Контакты</a>
+                <a href="html/services.html" class="footer-nav-link">Услуги</a>
+                <a href="html/masters.html" class="footer-nav-link">Мастера</a>
+                <a href="html/about.html" class="footer-nav-link">О нас</a>
+                <a href="html/blog.html" class="footer-nav-link">Блог</a>
+                <a href="html/contacts.html" class="footer-nav-link">Контакты</a>
             </div>
             
             <!-- Обратная связь -->
@@ -411,18 +411,17 @@
                 <form class="footer-contact-form" id="footerForm">
                     <div class="form-group">
                         <label for="footer-name">Имя</label>
-                        <input type="text" id="footer-name" name="name" placeholder="Ваше имя">
+                        <input type="text" id="footer-name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="footer-phone">Телефон</label>
-                        <input type="tel" id="footer-phone" name="phone" placeholder="+7 (___) ___-__-__">
+                        <input type="tel" id="footer-phone" name="phone" required>
                     </div>
                     <div class="form-group">
                         <label for="footer-email">E-mail</label>
-                        <input type="email" id="footer-email" name="email" placeholder="example@mail.ru">
+                        <input type="email" id="footer-email" name="email" required>
                     </div>
                     <button type="submit" class="footer-submit-btn">Отправить</button>
-                    
                 </form>
             </div>
         </div>
@@ -475,5 +474,8 @@
     <script src="js/certificates.js"></script>
     <script src="js/faq.js"></script>
     <script src="js/modal.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/forma.js"></script>
 </body>
 </html>
