@@ -1,7 +1,7 @@
-// sliders.js - скролл карточек акций и услуг
+// скролл карточек акций и услуг
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ========== СКРОЛЛ КАРТОЧЕК АКЦИЙ ==========
+    // карточки акций
     const promotionsSlider = document.querySelector('.promotions-slider');
     const promotionsTrack = document.querySelector('.promotions-track');
     const promotionCards = document.querySelectorAll('.promotion-card');
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initSlider(promotionsSlider, promotionsTrack, promotionCards, promotionDots, 'promotions');
     }
     
-    // ========== СКРОЛЛ КАРТОЧЕК УСЛУГ (ПО ОДНОЙ КАРТОЧКЕ) ==========
+    // карточки услуг
     const servicesSlider = document.querySelector('.services-slider');
     const servicesTrack = document.querySelector('.services-track');
     const serviceCards = document.querySelectorAll('.service-card');
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             
-            // Получаем реальную ширину первой карточки
+            // Получаем ширину первой карточки
             if (cards.length > 0) {
                 cardWidth = cards[0].offsetWidth;
             }
@@ -74,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 track.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
             }
             
-            // Обновляем dots
             if (dots && dots.length > 0) {
                 updateDots(index, dots);
             }
@@ -179,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Защита от выделения текста
         slider.addEventListener('dragstart', (e) => e.preventDefault());
         
-        // Устанавливаем курсор
-        slider.style.cursor = 'grab';
+        // // Устанавливаем курсор
+        // slider.style.cursor = 'grab';
     }
 });

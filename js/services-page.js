@@ -1,4 +1,4 @@
-// services-page.js - фильтры и анимации для страницы услуг
+// фильтры и анимации для страницы услуг
 
 document.addEventListener('DOMContentLoaded', () => {
     // Фильтры для услуг
@@ -123,22 +123,5 @@ document.addEventListener('DOMContentLoaded', () => {
             filterCards();
         });
     }
-    
-    // Обработка формы в футере
-    const footerForm = document.getElementById('footerForm');
-    if (footerForm) {
-        footerForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('footer-name')?.value;
-            const phone = document.getElementById('footer-phone')?.value;
-            const email = document.getElementById('footer-email')?.value;
-            
-            if (name && phone && email) {
-                alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
-                footerForm.reset();
-            } else {
-                alert('Пожалуйста, заполните все поля.');
-            }
-        });
-    }
+
 });

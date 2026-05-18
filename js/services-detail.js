@@ -1,11 +1,10 @@
-// menu.js - бургер-меню для мобильной версии
-
+// бургер-меню для мобильной версии
 document.addEventListener('DOMContentLoaded', () => {
     const burger = document.getElementById('burgerBtn');
     const navLinks = document.querySelector('.nav-links');
     const mainLogo = document.getElementById('mainLogo');
 
-    // Функция для обновления логотипа в зависимости от ширины экрана и состояния меню
+    // Функция для обновления логотипа
     function updateLogo() {
         if (!mainLogo) return;
         

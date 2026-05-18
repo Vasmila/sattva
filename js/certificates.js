@@ -140,10 +140,9 @@ document.addEventListener('DOMContentLoaded', () => {
         rebuildSmallCards();
     }
 
-    // ========== МОБИЛЬНАЯ ВЕРСИЯ (КАК В БЛОКАХ АКЦИИ И УСЛУГИ) ==========
+    // Мобильная версия
     const certificatesMobile = document.querySelector('.certificates-mobile');
     const certMobileSlider = document.querySelector('.certificates-mobile .cert-mobile-track') || (() => {
-        // Если трека нет, создаем структуру
         const mobileContainer = document.querySelector('.certificates-mobile');
         if (mobileContainer && !document.querySelector('.cert-mobile-track')) {
             const track = document.createElement('div');
@@ -174,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cards.length > 0) {
             mobileCardWidth = cards[0].offsetWidth;
         }
-        // Получаем gap из CSS
         const track = certMobileTrack;
         if (track) {
             const style = window.getComputedStyle(track);
@@ -196,11 +194,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             certMobileTrack.style.transition = 'none';
             certMobileTrack.style.transform = `translateX(-${scrollPosition}px)`;
-            // Force reflow
+
             certMobileTrack.offsetHeight;
             certMobileTrack.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
         }
-        
         // Обновляем точки
         if (certMobileDots) {
             const dots = certMobileDots.querySelectorAll('.dot');
@@ -221,7 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return Math.max(0, Math.min(index, maxIndex));
     }
 
-    // Получаем текущее значение translateX
     function getCurrentTranslateX() {
         const transform = certMobileTrack.style.transform;
         if (transform && transform !== 'none') {
@@ -233,7 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return 0;
     }
 
-    // Обработчики для drag
     const startDrag = (e) => {
         mobileIsDragging = true;
         mobileStartX = e.type === 'mousedown' ? e.pageX : e.touches[0].pageX;
@@ -250,7 +245,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const deltaX = currentX - mobileStartX;
         let newTransform = mobileStartTransform - deltaX;
         
-        // Ограничиваем
         const step = mobileCardWidth + mobileGap;
         const maxTransform = (certificatesData.length - 1) * step;
         newTransform = Math.max(0, Math.min(newTransform, maxTransform));
@@ -273,7 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function initMobileSlider() {
         if (!certMobileTrack || !certMobileDots) return;
         
-        // Очищаем
         certMobileTrack.innerHTML = '';
         certMobileDots.innerHTML = '';
         
@@ -307,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
             certMobileDots.appendChild(dot);
         });
         
-        // Обновляем ширину карточек
+
         updateMobileCardWidth();
         
         // Устанавливаем начальную позицию

@@ -1,5 +1,3 @@
-// blog.js - страница блога
-
 document.addEventListener('DOMContentLoaded', () => {
     // Элементы фильтров
     const filterBtns = document.querySelectorAll('.blog-filter-btn');
@@ -13,9 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFilter = 'all';
     let isAnimating = false;
     
-    // ========== ФУНКЦИИ ДЛЯ КНОПОК "ЧИТАТЬ ДАЛЕЕ" ==========
-    
-    // Функция для инициализации кнопок "читать далее" для первого типа карточек (обычные)
+    // Для кнопок "читать далее"
+    // Функция для инициализации кнопок "читать далее" для первого типа карточек
     function initReadMoreButtonsFirstType() {
         const firstTypeCards = document.querySelectorAll('.blog-card');
         
@@ -25,8 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let btn = card.querySelector('.read-more-btn');
             
             if (!textBlock) return;
-            
-            // Удаляем старую кнопку, если есть
+    
             if (btn) {
                 btn.remove();
             }
@@ -64,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Функция для инициализации кнопок "читать далее" для второго типа карточек (с фоном и кнопкой)
+    // Функция для инициализации кнопок "читать далее" для второго типа карточек
     function initReadMoreButtonsSecondType() {
         const secondTypeCards = document.querySelectorAll('.blog-card-alt');
         
@@ -112,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Функция для инициализации кнопок "читать далее" для третьего типа карточек (с фоновым изображением)
+    // Функция для инициализации кнопок "читать далее" для третьего типа карточек
     function initReadMoreButtonsThirdType() {
         const thirdTypeCards = document.querySelectorAll('.blog-card-bg');
         
@@ -167,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initReadMoreButtonsThirdType();
     }
     
-    // ========== ФУНКЦИЯ ФИЛЬТРАЦИИ ==========
+    // Функция фильтрации
     function filterCards(filterValue) {
         if (isAnimating) return;
         isAnimating = true;
@@ -176,7 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const cardsToHide = [];
         const cardsToShow = [];
         
-        // Определяем, какие карточки нужно показать/скрыть
         allCards.forEach(card => {
             const cardCategory = card.getAttribute('data-category');
             const shouldShow = (filterValue === 'all' || cardCategory === filterValue);
@@ -190,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // Сначала анимируем скрытие карточек
+        // скрытие карточек
         if (cardsToHide.length > 0) {
             cardsToHide.forEach(card => {
                 card.style.opacity = '0';
@@ -206,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
         
-        // Затем показываем новые карточки с анимацией
+        // новые карточки с анимацией
         setTimeout(() => {
             if (cardsToShow.length > 0) {
                 cardsToShow.forEach(card => {
@@ -223,14 +218,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
             
-            // Переинициализируем кнопки после фильтрации
             setTimeout(() => {
                 initAllReadMoreButtons();
                 isAnimating = false;
             }, 400);
         }, cardsToHide.length > 0 ? 350 : 50);
         
-        // Если нет карточек для скрытия и показа
         if (cardsToHide.length === 0 && cardsToShow.length === 0) {
             setTimeout(() => {
                 isAnimating = false;
@@ -238,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // ========== ОБРАБОТЧИКИ ФИЛЬТРОВ ==========
+    // Обработчики фильтров
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             if (isAnimating) return;
@@ -250,15 +243,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // ========== ПЛАВНОЕ ПОЯВЛЕНИЕ КАРТОЧЕК ПРИ ЗАГРУЗКЕ ==========
-    // Сначала скрываем все карточки
+    // Плавное появление карточек
     allCards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
         card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     });
-    
-    // Затем показываем их с задержкой
+
     setTimeout(() => {
         allCards.forEach((card, index) => {
             setTimeout(() => {
@@ -268,12 +259,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, 100);
     
-    // ========== ИНИЦИАЛИЗАЦИЯ КНОПОК "ЧИТАТЬ ДАЛЕЕ" ==========
+    // Инициализация кнопок "читать далее"
     setTimeout(() => {
         initAllReadMoreButtons();
     }, 500);
     
-    // ========== ОБНОВЛЕНИЕ ПРИ РЕСАЙЗЕ ==========
+    // обновление
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
@@ -282,37 +273,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 200);
     });
     
-    // ========== ОБРАБОТКА ФОРМЫ В ФУТЕРЕ ==========
-    const footerForm = document.getElementById('footerForm');
-    if (footerForm) {
-        footerForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('footer-name')?.value;
-            const phone = document.getElementById('footer-phone')?.value;
-            const email = document.getElementById('footer-email')?.value;
-            
-            if (name && phone && email) {
-                alert('Спасибо! Наш администратор свяжется с вами в ближайшее время.');
-                footerForm.reset();
-            } else {
-                alert('Пожалуйста, заполните все поля.');
-            }
-        });
-    }
 });
-
-// ========== ФУНКЦИИ ДЛЯ ОТКРЫТИЯ МОДАЛЬНЫХ ОКОН ==========
-function openBlogModal(blogId) {
-    const blogTitles = {
-        1: 'Как выбрать масло для массажа',
-        2: 'Тайский массаж: древняя техника исцеления',
-        3: 'Секреты долголетия: восточные практики'
-    };
-    
-    const title = blogTitles[blogId] || 'Статья';
-    alert(`Открыть полную версию статьи: ${title}`);
-}
-
-function openMasterModal(masterId) {
-    alert(`Открыть информацию о мастере №${masterId}`);
-}

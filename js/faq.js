@@ -1,4 +1,4 @@
-// faq.js - аккордеон для блока популярные вопросы
+// популярные вопросы
 
 document.addEventListener('DOMContentLoaded', () => {
     const faqItems = document.querySelectorAll('.faq-item');
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const toggleBtn = item.querySelector('.faq-toggle');
         const question = item.querySelector('.faq-question');
         
-        // Добавляем картинку в кнопку, если её нет
+        // Добавляем фото в кнопку
         if (toggleBtn && !toggleBtn.querySelector('img')) {
             const img = document.createElement('img');
             img.src = 'img/btn_faq.png';
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
         
-        // Клик по всей области вопроса тоже открывает
+        // Клик по всей области вопроса
         if (question) {
             question.addEventListener('click', (e) => {
                 if (e.target !== toggleBtn && !toggleBtn.contains(e.target)) {

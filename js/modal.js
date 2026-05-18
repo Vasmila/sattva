@@ -1,4 +1,4 @@
-// modal.js - модальное окно формы записи
+// модальное окно формы записи
 
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('bookingModal');
@@ -42,33 +42,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Обработка отправки формы
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const name = document.getElementById('modal-name')?.value;
-            const phone = document.getElementById('modal-phone')?.value;
-            const email = document.getElementById('modal-email')?.value;
-            const privacyCheckbox = document.querySelector('input[name="privacy"]')?.checked;
-            const offerCheckbox = document.querySelector('input[name="offer"]')?.checked;
-            
-            if (!name || !phone || !email) {
-                alert('Пожалуйста, заполните все поля.');
-                return;
-            }
-            
-            if (!privacyCheckbox || !offerCheckbox) {
-                alert('Пожалуйста, примите условия политики конфиденциальности и оферты.');
-                return;
-            }
-            
-            // Здесь можно отправить данные на сервер
-            console.log('Заявка отправлена:', { name, phone, email });
-            
-            alert('Спасибо! Наш администратор свяжется с вами в ближайшее время.');
-            bookingForm.reset();
-            closeModal();
-        });
-    }
+
 });
