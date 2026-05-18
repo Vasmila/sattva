@@ -1,4 +1,4 @@
-/* ========== HERO СЕКЦИЯ ========== */
+/* Первый экран */
 .services-hero-outer {
     background-image: url('../img/bg-services.png');
     background-size: cover;
@@ -21,7 +21,6 @@
     }
 }
 
-/* Заголовок по центру */
 .services-hero-title {
     flex: 1;
     display: flex;
@@ -50,7 +49,7 @@
 }
 
 
-/* ========== ИНФОРМАЦИОННЫЙ БЛОК ========== */
+/* Информационный блок */
 .contacts-info {
     padding: 0 0 120px 0;
 }
@@ -64,7 +63,6 @@
 .contacts-info-container {
     max-width: 1440px;
     margin: 0 auto;
-    /* padding: 0 40px; */
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 24px;
@@ -72,14 +70,13 @@
 
 @media (max-width: 768px) {
     .contacts-info-container {
-        /* padding: 0 16px; */
         gap: 32px;
         display: flex;
         flex-direction: column;
     }
 }
 
-/* Левая колонка - 4 колонки */
+/* Левая колонка */
 .contacts-info-left {
     grid-column: span 4;
 }
@@ -104,12 +101,12 @@
 }
 
 
-/* Правая колонка - 4 колонки */
+/* Правая колонка*/
 .contacts-info-right {
     grid-column: span 4;
 }
 
-/* Пустая колонка - 4 колонки */
+/* Пустая колонка*/
 .contacts-info-empty {
     grid-column: span 4;
 }
@@ -123,8 +120,7 @@
     
 }
 
-/* ========== КАРТА ========== */
-
+/* Карта*/
 .contacts-map-container {
     max-width: 1440px;
     margin: 0 auto;

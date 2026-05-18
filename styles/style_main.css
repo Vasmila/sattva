@@ -1,6 +1,4 @@
-/* ========== HERO секция ========== */
-
-
+/* Первый экран */
 .hero-content {
     margin: 0px 120px;
     flex: 1;
@@ -55,6 +53,7 @@
     margin: 0;
     margin-bottom: 0;
     transition: 1s;
+    letter-spacing: 4%;
 }
 .grid-text-line-3 {
     font: 54px ChampagneLimousines, sans-serif;
@@ -64,7 +63,9 @@
     margin-top: 0;
     margin-bottom: 0;
     transition: 1s;
+    letter-spacing: 4%;
 }
+
 
 @media (max-width: 1024px) {
     .grid-text-line-2 {
@@ -129,8 +130,6 @@
     }
 }
 
-
-
 .inline-note {
     font-weight: 300;
     color: #ffffff;
@@ -149,7 +148,6 @@
     }
 }
 
-/* Дополнительный фикс для body на мобильных */
 @media (max-width: 768px) {
     body {
         min-height: 100vh;
@@ -158,14 +156,12 @@
     }
 }
 
-/* Обертка для всего сайта */
 .site-wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* Для мобильной версии */
 @media (max-width: 768px) {
     .hero {
         flex: 1;
@@ -187,8 +183,7 @@
         margin-bottom: 16px;
     }
 }
-/* ========== БЛОК С ИЗОБРАЖЕНИЕМ И ИНФОГРАФИКОЙ ========== */
-
+/* Инфорграфика */
 .about-container {
     flex: 1;
     display: grid;
@@ -241,7 +236,6 @@
     transform: scale(1.03);
 }
 
-/* Текстовый блок */
 .about-text {
     grid-column: 5 / 12;
     height: 367px;
@@ -339,8 +333,7 @@
 }
 
 
-/* ========== БЛОК С КВАДРАТНЫМИ КАРТОЧКАМИ ========== */
-
+/* Карточки особенности салона */
 .features-grid {
     flex: 1;
     display: grid;
@@ -359,7 +352,6 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
-/* Мобильная версия: горизонтальный скролл без полосы прокрутки */
 @media (max-width: 768px) {
     .features-grid {
         display: flex;
@@ -462,7 +454,7 @@
     }
 }
 
-/* ========== БЛОК С АКЦИЯМИ ========== */
+/* Акции*/
 .promotions-section {
     background-color: #ECF0E1;
 }
@@ -565,7 +557,6 @@
 }
 
 
-/* Стили для второй карточки акции - синий цвет */
 .promotion-card:nth-child(2) {
     background-color: #2C4A61;
 }
@@ -636,7 +627,7 @@
     }
 }
 
-/* ========== БЛОК С ПОПУЛЯРНЫМИ УСЛУГАМИ ========== */
+/* Популярные услуги */
 .services-section {
     background-color: #ECF0E1;
 }
@@ -651,20 +642,6 @@
 .services-title {
     margin-bottom: 0;
 }
-
-/* .services-link {
-    font-family: 'Gilroy', sans-serif;
-    font-size: 24px;
-    color: #000000;
-    text-decoration: none;
-    padding-bottom: 8px;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease;
-}
-
-.services-link:hover {
-    border-bottom-color: #6A8366;
-} */
 
 .services-slider {
     overflow: hidden;
@@ -767,7 +744,6 @@
     margin-top: 32px;
 }
 
-/* Адаптивность для блока услуг */
 @media (max-width: 1440px) {
     .service-image {
         height: 200px;
@@ -775,7 +751,6 @@
 
 }
 
-/* Стиль для ссылки "Все услуги" с подчеркиванием на 8px */
 .services-link {
     font-family: 'Gilroy', sans-serif;
     font-size: 24px;
@@ -820,8 +795,6 @@
 }
 
 
-
-/* Убираем курсор-руку со всех слайдеров */
 .promotions-slider,
 .promotions-track,
 .services-slider,
@@ -840,7 +813,7 @@
 
 
 
-/* ========== БЛОК FAQ ========== */
+/* Вопросы */
 .faq-section {
     background-color: #ECF0E1;
     padding-bottom: 120px;
@@ -874,7 +847,6 @@
     flex: 1;
 }
 
-/* Кнопка раскрытия 56x56 с картинкой */
 .faq-toggle {
     width: 56px;
     height: 56px;
@@ -903,7 +875,6 @@
     transform: scale(1.02);
 }
 
-/* Активное состояние (картинка поворачивается, цвет кнопки меняется на бежевый) */
 .faq-toggle.active {
     background-color: #32412E;
 }
@@ -912,7 +883,6 @@
     transform: rotate(90deg);
 }
 
-/* Ответ */
 .faq-answer {
     max-height: 0;
     overflow: hidden;
@@ -923,7 +893,6 @@
     line-height: 1.5;
 }
 
-/* Открытое состояние */
 .faq-item.open .faq-answer {
     max-height: 300px;
 }

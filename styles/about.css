@@ -1,4 +1,4 @@
-/* ========== HERO СЕКЦИЯ ========== */
+/* Первый экран */
 .services-hero-outer {
     background-image: url('../img/bg-about.png');
     background-size: cover;
@@ -21,7 +21,6 @@
     }
 }
 
-/* Заголовок по центру */
 .services-hero-title {
     flex: 1;
     display: flex;
@@ -44,7 +43,7 @@
     margin-bottom: 120px;
 }
 
-/* ========== БЛОК С ТЕКСТОМ (ШИРИНА 900, ПРИЖАТ К ПРАВОМУ КРАЮ) ========== */
+/* Блок текст */
 .about-text-wrapper {
     max-width: 1440px;
     margin: 0 auto;
@@ -74,7 +73,7 @@
     }
 }
 
-/* ========== 3 КВАДРАТНЫЕ КАРТИНКИ (СКРОЛЛ НА МОБИЛЬНОЙ) ========== */
+/* Блок три фото */
 .about-gallery-container {
     margin: 0 auto;
     display: grid;
@@ -125,7 +124,7 @@
     transform: scale(1.05);
 }
 
-/* ========== БЛОК ТЕКСТ + КАРТИНКА ========== */
+/* Блок текст + фото */
 .about-feature-container {
     margin: 0 auto;
     display: grid;
@@ -238,7 +237,7 @@
     background-color: #6A8366;
 }
 
-/* Картинка - с 9 по 12 колонки */
+/* Фото */
 .about-feature-image {
     grid-column: 9 / 13;
     overflow: hidden;
@@ -264,7 +263,7 @@
     transform: scale(1.05);
 }
 
-/* ========== СЕКЦИЯ 2: ДВА РАВНЫХ БЛОКА ========== */
+/* Блок текст + кнопка */
 .about-two-blocks {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -297,7 +296,7 @@
 
 
 
-/* ========== СЕКЦИЯ 3: ДВА ИЗОБРАЖЕНИЯ ========== */
+/* Блок 2 фото */
 .about-double-image {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -384,7 +383,7 @@
 }
 
 
-/* ========== СЕКЦИЯ 4: ИЗОБРАЖЕНИЕ + ФРАЗА ========== */
+/* Блок фото + фраза */
 .about-feature-container2 {
     display: grid;
     grid-template-columns: 1fr 2fr;

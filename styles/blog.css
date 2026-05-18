@@ -1,4 +1,4 @@
-/* ========== HERO СЕКЦИЯ ========== */
+/* Первый экран */
 .services-hero-outer {
     background-image: url('../img/bg-blog.png');
     background-size: cover;
@@ -21,7 +21,6 @@
     }
 }
 
-/* Заголовок по центру */
 .services-hero-title {
     flex: 1;
     display: flex;
@@ -50,7 +49,7 @@
 }
 
 
-/* ========== БЛОК С ТЕКСТОМ (ШИРИНА 900, ПРИЖАТ К ПРАВОМУ КРАЮ) ========== */
+/* Блок текст */
 .about-text-wrapper {
     max-width: 1440px;
     margin: 0 auto;
@@ -81,7 +80,7 @@
 }
 
 
-/* ========== ФИЛЬТРЫ ========== */
+/* Фильтры */
 .blog-filters {
     padding-bottom: 72px;
     background-color: #ECF0E1;
@@ -126,15 +125,9 @@
     color: #FFFFFF;
 }
 
-@media (max-width: 768px) {
-    .blog-filter-btn {
-        font-size: 16px;
-        padding: 6px 24px;
-    }
-}
 
-/* ========== КАРТОЧКИ БЛОГА ========== */
-/* ========== ОБЩИЕ СТИЛИ ДЛЯ КНОПОК ЧИТАТЬ ДАЛЕЕ ========== */
+/* Карточки */
+/* Стили для кнопок "читать далее" в мобилке */
 .read-more-btn,
 .read-more-btn-alt,
 .read-more-btn-bg {
@@ -209,7 +202,7 @@
 }
 
 
-/* ========== ПЕРВЫЙ ВАРИАНТ КАРТОЧКИ ========== */
+/* Карточка 1 */
 .blog-card {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -237,7 +230,7 @@
     }
 }
 
-/* Картинка - 1 колонка (квадрат) */
+/* Фото */
 .blog-card-image {
     grid-column: span 3;
     aspect-ratio: 1 / 1;
@@ -259,7 +252,6 @@
     .blog-card-image {
         width: 100%;
         height: 200px;
-        /* aspect-ratio: 2 / 1; */
         border-radius: 16px;
     }
 }
@@ -275,7 +267,7 @@
     transform: scale(1.05);
 }
 
-/* Контент - 2 колонки */
+/* Текст 2 колонки */
 .blog-card-content {
     grid-column: span 9;
     display: flex;
@@ -288,18 +280,15 @@
     }
 }
 
-/* Обертка для текста с кнопкой */
 .blog-card-text-wrapper {
     display: flex;
     flex-direction: column;
 }
 
-/* Заголовок */
 .blog-card-title {
     margin: 24px 0 40px 0;
 }
 
-/* Текст - две колонки */
 .blog-card-text {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -332,11 +321,8 @@
     }
 }
 
-/* .blog-card-text p {
-    margin: 0;
-} */
 
-/* ========== ВТОРОЙ ВАРИАНТ КАРТОЧКИ (С ФОНОМ И КНОПКОЙ) ========== */
+/* Карточка 2 */
 .blog-card-alt {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -370,11 +356,9 @@
     }
 }
 
-/* Картинка - ширина 384px */
+/* Фото */
 .blog-card-alt-image {
     grid-column: span 3;
-    /* width: 384px; */
-    /* aspect-ratio: 1 / 1; */
     overflow: hidden;
     border-radius: 16px;
 }
@@ -386,17 +370,10 @@
     }
 }
 
-/* @media (max-width: 1024px) {
-    .blog-card-alt-image {
-        aspect-ratio: 1 / 1;
-    }
-} */
-
 @media (max-width: 768px) {
     .blog-card-alt-image {
         width: 100%;
         height: 200px;
-        /* aspect-ratio: 2 / 1; */
         border-radius: 16px;
     }
 }
@@ -426,22 +403,16 @@
     }
 }
 
-/* Обертка для текста с кнопкой */
 .blog-card-alt-text-wrapper {
     display: flex;
     flex-direction: column;
     margin-bottom: 32px;
 }
 
-/* Заголовок */
 .blog-card-alt-title {
-    /* font-family: 'ChampagneLimousines', sans-serif;
-    font-size: 28px;
-    font-weight: 900; */
     color: #ffffff;
     margin: 0 0 24px 0;
     margin: 24px 0 40px 0;
-    /* line-height: 1.3; */
 }
 
 @media (max-width: 1024px) {
@@ -492,45 +463,9 @@
 }
 
 .blog-card-alt-text p {
-    /* font-family: 'Gilroy', sans-serif;
-    font-size: 16px;
-    line-height: 1.6; */
     color: #ffffff;
     margin: 0;
 }
-
-/* @media (max-width: 1024px) {
-    .blog-card-alt-text p {
-        font-size: 14px;
-    }
-} */
-
-/* Кнопка на всю ширину (большая) */
-/* .blog-card-alt-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    background-color: #6A8366;
-    border: none;
-    border-radius: 48px;
-    padding: 16px 24px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-}
-
-.blog-card-alt-btn:hover {
-    background-color: #2C3E2B;
-    transform: translateY(-2px);
-}
-
-.blog-card-alt-btn span {
-    font-family: 'GilroyMedium', sans-serif;
-    font-size: 18px;
-    color: #FFFFFF;
-} */
 
 /* Кнопка */
 .master-btn {
@@ -563,10 +498,7 @@
     }
 
     .master-btn span {
-        /* font-family: 'GilroySemibold', sans-serif; */
         font-size: 20px;
-        /* color: #ffffff;
-        transition: color 0.3s ease; */
     }
 }
 
@@ -635,7 +567,7 @@
 }
 
 
-/* Стрелка в большой кнопке */
+/* Стрелка в кнопке */
 .blog-card-alt-arrow {
     position: relative;
     width: 24px;
@@ -685,7 +617,7 @@
 }
 
 
-/* ========== ТРЕТИЙ ВАРИАНТ КАРТОЧКИ (С ФОНОВЫМ ИЗОБРАЖЕНИЕМ) ========== */
+/* Карточка 3 */
 .blog-card-bg {
     position: relative;
     background-image: url('../img/blog4.png');
@@ -708,17 +640,6 @@
     }
 }
 
-/* Затемнение фона */
-/* .blog-card-bg-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-} */
-
 /* Контент поверх затемнения */
 .blog-card-bg-content {
     position: relative;
@@ -733,7 +654,6 @@
 @media (max-width: 1024px) {
     .blog-card-bg-content {
         padding: 24px;
-        /* min-height: 350px; */
     }
 }
 
@@ -745,33 +665,17 @@
     }
 }
 
-/* Заголовок */
 .blog-card-bg-title {
-    /* font-family: 'ChampagneLimousines', sans-serif;
-    font-size: 40px;
-    font-weight: 900; */
     color: #FFFFFF;
-    /* margin: 0 0 40px 0;
-    line-height: 1.3;
-    max-width: 70%; */
 }
-
-/* @media (max-width: 1024px) {
-    .blog-card-bg-title {
-        font-size: 32px;
-        max-width: 80%;
-        margin-bottom: 30px;
-    }
-} */
 
 @media (max-width: 768px) {
     .blog-card-bg-title {
-        /* max-width: 100%; */
         margin-bottom: 20px;
     }
 }
 
-/* Нижний блок - 12 колонок */
+/* Нижний блок */
 .blog-card-bg-bottom {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -788,7 +692,7 @@
     }
 }
 
-/* Текстовая часть - 7 колонок */
+/* Текст */
 .blog-card-bg-text-wrapper {
     grid-column: span 7;
     display: flex;
@@ -805,13 +709,6 @@
     color: #FFFFFF;
 }
 
-/* .blog-card-bg-text p {
-    margin: 0 0 16px 0;
-} */
-
-/* .blog-card-bg-text p:last-child {
-    margin-bottom: 0;
-} */
 
 @media (max-width: 768px) {
     .blog-card-bg-text {
@@ -842,20 +739,15 @@
     }
 }
 
-
-
-
-/* Кнопка - 5 колонок, выравнивание по низу */
+/* Кнопка*/
 .blog-card-bg-btn {
     grid-column: span 5;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
-    /* background-color: #FFFFFF; */
     border: none;
     border-radius: 48px;
-    /* padding: 16px 24px; */
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -877,10 +769,7 @@
 
     }
     .blog-card-bg-btn span {
-        /* font-family: 'GilroySemibold', sans-serif; */
         font-size: 20px;
-        /* color: #ffffff;
-        transition: color 0.3s ease; */
     }
 }
 
@@ -897,7 +786,7 @@
     background-color: #D5DBC6;
 }
 
-/* ========== СКРЫТИЕ КАРТОЧЕК ПРИ ФИЛЬТРАЦИИ ========== */
+/* скрытие карточек при фильтрации */
 .blog-card.hide,
 .blog-card-alt.hide,
 .blog-card-bg.hide {
@@ -909,20 +798,17 @@
     overflow: hidden !important;
 }
 
-/* Убираем отступы у последней видимой карточки */
 .blog-card:last-child,
 .blog-card-alt:last-child,
 .blog-card-bg:last-child {
     margin-bottom: 0;
 }
 
-/* Контейнер для карточек */
 section:has(.blog-card, .blog-card-alt, .blog-card-bg) {
     display: flex;
     flex-direction: column;
 }
 
-/* Убираем лишние отступы у скрытых карточек */
 .blog-card.hide + .blog-card,
 .blog-card.hide + .blog-card-alt,
 .blog-card.hide + .blog-card-bg,

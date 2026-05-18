@@ -36,6 +36,7 @@ h1 {
     font: 70px ChampagneLimousines, sans-serif;
     font-weight: 900;
     color: #ffffff;
+    letter-spacing: 4%;
 }
 h2{
     font: 60px GilroyMedium, sans-serif;
@@ -51,6 +52,7 @@ h5{
     font: 40px ChampagneLimousines, sans-serif;
     font-weight: 900;
     color: #ffffff;
+    letter-spacing: 4%;
 }
 
 section{
@@ -98,7 +100,7 @@ section{
     }
 }
 
-/* ========== HERO секция ========== */
+/* Первый экран  */
 .hero {
     background: transparent;
     margin: 0;
@@ -224,7 +226,6 @@ section{
     
     .nav-links li a:hover {
         border-bottom-color: #2C3E2B;
-        /* color: #6A8366; */
     }
 }
 
@@ -275,7 +276,7 @@ section{
 }
 
 
-/* ========== ФУТЕР ========== */
+/* Футер */
 .footer {
     background-image: url('../img/foot.png');
     background-size: cover;
@@ -302,7 +303,7 @@ section{
     gap: 40px;
 }
 
-/* ========== ПЕРВЫЙ БЛОК ========== */
+/* 1 блок */
 .footer-info {
     flex: 1;
     text-align: left;
@@ -343,7 +344,7 @@ section{
     opacity: 0.8;
 }
 
-/* ========== ВТОРОЙ БЛОК ========== */
+/* 2 блок*/
 .footer-nav {
     flex: 1;
     display: flex;
@@ -362,7 +363,7 @@ section{
     line-height: 1.4;
 }
 
-/* ========== ТРЕТИЙ БЛОК ========== */
+/* 3 блок */
 .footer-form {
     flex: 1;
 }
@@ -435,7 +436,6 @@ section{
     color: #6A8366;
 }
 
-/* ========== АДАПТИВНОСТЬ ========== */
 @media (max-width: 1024px) {
     .footer-container {
         flex-wrap: wrap;
@@ -539,6 +539,8 @@ section{
         gap: 12px;
     }
 }
+
+/* Кнопки */
 
 .btn-primary {
     background: #6A8366;

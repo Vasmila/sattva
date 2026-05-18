@@ -1,4 +1,4 @@
-/* ========== HERO СЕКЦИЯ ========== */
+/* Первый экран */
 .services-hero-outer {
     background-image: url('../img/bg-services.png');
     background-size: cover;
@@ -21,7 +21,6 @@
     }
 }
 
-/* Заголовок по центру */
 .services-hero-title {
     flex: 1;
     display: flex;
@@ -49,15 +48,10 @@
     }
 }
 
-
-
-
-/* ========== ФИЛЬТРЫ ========== */
+/* Фильтры */
 .filters-section {
-
     padding-bottom: 40px;
 }
-
 
 @media (max-width: 768px) {
     .filters-container {
@@ -65,7 +59,8 @@
     }
 }
 
-/* Фильтры по тегам - как тэги на карточках */
+
+/* Фильтры по тегам */
 .filters-tags {
     display: flex;
     flex-wrap: wrap;
@@ -86,7 +81,6 @@
 }
 
 .filter-tag:hover {
-    /* background-color: #32412E; */
     transform: translateY(-2px);
 }
 
@@ -122,7 +116,6 @@
 }
 
 .filter-select-btn {
-
     background: transparent;
     border: 0px solid;
     border-radius: 40px;
@@ -209,7 +202,7 @@
     }
 }
 
-/* ========== УСЛУГИ ========== */
+/* услуги */
 .services-section {
     background-color: #ECF0E1;
 }
@@ -252,7 +245,7 @@
     }
 }
 
-/* ========== БОЛЬШАЯ КАРТОЧКА УСЛУГИ ========== */
+/* Большая карточка */
 .service-card-large {
     background-size: cover;
     background-repeat: no-repeat;
@@ -268,7 +261,7 @@
     grid-column: 1 / -1;
     position: relative;
 }
-/* ========== БОЛЬШАЯ КАРТОЧКА НА 2 КОЛОНКИ ========== */
+/* Большая карточка 2 */
 .service-card-large-half {
     background-size: cover;
     background-repeat: no-repeat;
@@ -284,7 +277,6 @@
     grid-column: span 2;
 }
 
-/* Затемнение фона */
 .service-card-large::before, .service-card-large-half::before {
     content: '';
     position: absolute;
@@ -297,7 +289,6 @@
     z-index: 1;
 }
 
-/* Блюр для фона */
 .service-card-large::after, .service-card-large-half::after {
     content: '';
     position: absolute;
@@ -310,7 +301,6 @@
     z-index: 2;
 }
 
-/* Все содержимое поверх затемнения */
 .service-card-large > *, .service-card-large-half > * {
     position: relative;
     z-index: 3;
@@ -377,7 +367,7 @@
     line-height: 1.4;
 }
 
-/* Третий блок: цена, стрелка, время - ВЕРТИКАЛЬНАЯ ОРИЕНТАЦИЯ */
+/* Третий блок: цена, стрелка, время*/
 .service-large-footer {
     display: flex;
     align-items: center;
@@ -408,7 +398,6 @@
     position: relative;
 }
 
-/* Длинная линия стрелки */
 .service-large-arrow-line {
     width: 100%;
     height: 1px;
@@ -416,7 +405,6 @@
     position: relative;
 }
 
-/* Расходящиеся линии на конце (стрелка указывает вправо - линии расходятся вправо) */
 .service-large-arrow-fork {
     position: absolute;
     right: 0;
@@ -436,14 +424,12 @@
     right: 0;
 }
 
-/* Верхняя линия - наклон вправо-вверх */
 .service-large-arrow-fork::before {
     transform: rotate(-45deg);
     top: -5px;
     right: 8px;
 }
 
-/* Нижняя линия - наклон вправо-вниз */
 .service-large-arrow-fork::after {
     transform: rotate(45deg);
     bottom: -5px;
@@ -547,8 +533,7 @@
 
 
 
-/* ========== ОБЫЧНЫЕ КАРТОЧКИ - 3 колонки ========== */
-
+/* Карточки */
 /* Обычные карточки */
 .service-card {
     background-color: #FFFFFF;
@@ -622,8 +607,6 @@
     text-align: center;
 }
 
-
-/* Адаптивность для обычных карточек */
 @media (max-width: 1440px) {
     .service-image {
         height: 200px;

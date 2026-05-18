@@ -1,4 +1,4 @@
-/* HERO СЕКЦИЯ */
+/* Первый экран */
 .service-hero {
     background: transparent;
     margin: 0;
@@ -18,8 +18,17 @@
     flex-direction: column;
 }
 
+.service-hero-1 .service-hero-outer {
+    background-image: url('../img/service-detail-bg.png');
+}
+.service-hero-2 .service-hero-outer {
+    background-image: url('../img/service-detail-bg3.png');
+}
+
+
 @media (max-width: 768px) {
-    .service-hero-outer {
+    .service-hero-1 .service-hero-outer,
+    .service-hero-2 .service-hero-outer {
         margin: 16px;
         margin-bottom: 16px;
         border-radius: 24px;
@@ -34,7 +43,6 @@
     position: relative;
 }
 
-/* Навигация на мобильной версии - без фона */
 @media (max-width: 768px) {
     .service-hero-outer .navbar {
         background-color: transparent;
@@ -53,7 +61,7 @@
     }
 }
 
-/* Контент hero */
+/* Контент */
 .service-hero-content {
     flex: 1;
     display: grid;
@@ -102,7 +110,6 @@
     }
 }
 
-/* Блок с текстом после картинки - вертикальное расположение */
 .service-hero-text-block {
     display: contents;
 }
@@ -116,7 +123,6 @@
     }
 }
 
-/* Заголовок - со 2 колонки */
 .service-hero-title {
     color: #FFFFFF;
     grid-column: 2 / 12;
@@ -142,7 +148,6 @@
     }
 }
 
-/* Тэг - со 2 колонки */
 .service-hero-tag {
     font-family: 'GilroyMedium', sans-serif;
     font-size: 16px;
@@ -154,7 +159,6 @@
     grid-column: 2 / 12;
     width: fit-content;
     height: 35px;
-    /* margin-top: -50px */
 }
 
 @media (max-width: 768px) {
@@ -186,7 +190,6 @@
     }
 }
 
-/* Блок цена, стрелка, время */
 .service-hero-price-block {
     display: flex;
     flex-direction: column;
@@ -297,7 +300,7 @@
 }
 
 
-/* ========== БЛОК С КОЛОНКАМИ ========== */
+/* Текст 2 колонки */
 .service-info-section {
     margin: 80px 40px;
 }
@@ -314,28 +317,22 @@
     gap: 24px;
 }
 
-/* Левая колонка */
 .service-info-left {
     grid-column: 2 / 7;
 }
 
-/* Правая колонка */
 .service-info-right {
     grid-column: 7 / 12;
     display: flex;
     flex-direction: column;
     gap: 56px;
 }
-
-/* Блок с заголовком и текстом */
 .service-info-block {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-
-/* Адаптивность для мобильной версии */
 @media (max-width: 768px) {
     .service-info-container {
         display: flex;

@@ -1,4 +1,4 @@
-/* ========== HERO СЕКЦИЯ ========== */
+/* Первый экран */
 .services-hero-outer {
     background-image: url('../img/bg-masters.png');
     background-size: cover;
@@ -21,7 +21,6 @@
     }
 }
 
-/* Заголовок по центру */
 .services-hero-title {
     flex: 1;
     display: flex;
@@ -44,7 +43,7 @@
     margin-bottom: 120px;
 }
 
-/* ========== СЕКЦИЯ С КАРТОЧКАМИ ========== */
+/* Карточки */
 .masters-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -71,7 +70,7 @@
     }
 }
 
-/* ========== КАРТОЧКА МАСТЕРА ========== */
+/* Карточка мастера */
 .master-card {
     background-color: #FFFFFF;
     border-radius: 32px;
@@ -93,7 +92,6 @@
         height: 356px;
     }
 }
-
 
 .master-photo img {
     width: 100%;
@@ -134,7 +132,6 @@
     white-space: nowrap;
 }
 
-
 .master-btn span {
     font-family: 'GilroySemibold', sans-serif;
     font-size: 24px;
@@ -154,7 +151,6 @@
     position: relative;
 }
 
-/* Длинная линия стрелки */
 .service-large-arrow-line {
     width: 100%;
     height: 1px;
@@ -162,9 +158,6 @@
     position: relative;
 }
 
-
-
-/* Расходящиеся линии на конце (стрелка указывает вправо - линии расходятся вправо) */
 .service-large-arrow-fork {
     position: absolute;
     right: 0;
@@ -184,14 +177,12 @@
     right: 0;
 }
 
-/* Верхняя линия - наклон вправо-вверх */
 .service-large-arrow-fork::before {
     transform: rotate(-45deg);
     top: -5px;
     right: 8px;
 }
 
-/* Нижняя линия - наклон вправо-вниз */
 .service-large-arrow-fork::after {
     transform: rotate(45deg);
     bottom: -5px;
@@ -209,9 +200,7 @@
 }
 
 
-
-
-/* ========== МОДАЛЬНОЕ ОКНО МАСТЕРА ========== */
+/* Модальное окно мастера */
 .master-modal {
     display: none;
     position: fixed;
@@ -240,7 +229,6 @@
     box-sizing: border-box;
 }
 
-/* Кнопка закрытия */
 .master-modal-close {
     position: absolute;
     top: 24px;
@@ -275,15 +263,12 @@
     background-color: #6A8366;
 }
 
-/* Заголовок и подпись */
 .master-modal-header {
     margin-bottom: 56px;
     padding-right: 40px;
 }
 
 .master-modal-name {
-    /* font-family: 'ChampagneLimousines', sans-serif;
-    font-size: 40px; */
     font-weight: 900;
     color: #000000;
     margin: 0;
@@ -296,7 +281,6 @@
 
 }
 
-/* Тело модального окна - две равные колонки */
 .master-modal-body {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -304,7 +288,6 @@
     align-items: center;
 }
 
-/* Фото */
 .master-modal-photo {
     width: 100%;
     height: 470px;
@@ -318,22 +301,6 @@
     object-fit: cover;
 }
 
-/* Информация */
-/* .master-modal-info {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-} */
-
-
-/* .master-modal-description {
-    font-family: 'Gilroy', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #5A6A58;
-} */
-
-/* Адаптивность для планшета */
 @media (max-width: 900px) {
     .master-modal-name {
         font-size: 32px;
@@ -344,7 +311,6 @@
     }
 }
 
-/* Адаптивность для мобильной версии */
 @media (max-width: 768px) {
     .master-modal-content {
         padding: 24px;

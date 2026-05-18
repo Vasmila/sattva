@@ -1,4 +1,4 @@
-/* ========== HERO СЕКЦИЯ ========== */
+/* Первый экран */
 .article-hero {
     background: transparent;
     margin: 0;
@@ -7,7 +7,6 @@
 }
 
 .article-hero-outer {
-    /* background-image: url('../img/article-bg-1.png'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -42,7 +41,6 @@
     position: relative;
 }
 
-/* Картинка для мобильной версии (скрыта на десктопе) */
 .article-hero-mobile-image {
     display: none;
 }
@@ -78,7 +76,8 @@
         object-fit: cover;
     }
 }
-/* Контент hero */
+
+/* Контент первого экрана */
 .article-hero-content {
     flex: 1;
     display: grid;
@@ -105,20 +104,13 @@
     }
 }
 
-/* Заголовок */
 .article-hero-title {
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    /* flex: 1;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    padding: 0 0 120px 115px; */
     color: #FFFFFF;
     grid-column: 2 / 12;
     margin: 0;
-    /* margin-top: 400px; */
 }
 
 
@@ -132,12 +124,10 @@
     }
 }
 
-/* Навигация на мобильной версии - без фона */
 @media (max-width: 768px) {
     .article-hero-outer .navbar {
         background-color: transparent;
         width: 100%;
-        /* margin: 0 16px; */
         padding: 16px 0;
     }
     
@@ -155,7 +145,6 @@
     margin-left: auto;
     margin-right: auto;
     padding: 0 40px 120px 40px;
-    /* padding-bottom: 120px; */
 }
 @media (max-width: 1024px) {
     .article-content{
@@ -165,7 +154,7 @@
     }
 }
 
-/* ========== ТИП БЛОКА 1: ТЕКСТ + ФОТО (8 и 4 колонки) ========== */
+/* Тип блока 1 */
 .article-block-row {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -231,12 +220,11 @@
     }
 }
 
-/* ========== ТИП БЛОКА 3: ФОТО НА ВСЮ ШИРИНУ ========== */
+/* Тип блока 2 */
 .article-block-full-image {
     grid-column: 1 / -1;
     overflow: hidden;
     border-radius: 24px;
-    /* aspect-ratio: 16 / 9; */
     margin-bottom: 32px;
 }
 
@@ -260,7 +248,7 @@
     }
 }
 
-/* ========== ТИП БЛОКА 4: ДВА РАВНЫХ БЛОКА ========== */
+/* Тип блока 3 */
 .article-block-two-columns {
     display: grid;
     grid-template-columns: repeat(12, 1fr);

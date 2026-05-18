@@ -1,6 +1,5 @@
-/* certificates.css - стили для блока сертификатов */
+/* для блока сертификатов */
 
-/* ========== ОБЩИЕ СТИЛИ ========== */
 .certificates-section {
     background-color: #ECF0E1;
     padding-bottom: 120px;
@@ -10,8 +9,7 @@
     margin-bottom: 48px;
 }
 
-/* ========== ЦВЕТА КАРТОЧЕК ========== */
-/* Цвет 0 - Синий */
+/* Цвета карточек*/
 .cert-card-large[data-cert-color="0"],
 .cert-card-small[data-cert-color="0"] {
     background-color: #2C4A61;
@@ -83,7 +81,7 @@
     background-color: #FFFFFF;
 }
 
-/* ========== ВЕРТИКАЛЬНЫЙ БЛОК С ЦЕНОЙ ========== */
+/* мини-блок с ценой */
 .cert-price-block-vertical {
     display: flex;
     flex-direction: column;
@@ -122,7 +120,7 @@
     font-size: 24px;
 }
 
-/* ========== ВЕРХНЯЯ БОЛЬШАЯ КАРТОЧКА ========== */
+/* Верхняя карточка */
 .cert-card-large {
     display: flex;
     border-radius: 32px;
@@ -140,9 +138,6 @@
 }
 
 .cert-large-title {
-    /* font-family: 'ChampagneLimousines', sans-serif;
-    font-size: 40px;
-    font-weight: 900; */
     margin-bottom: 40px;
     line-height: 1.2;
 }
@@ -195,7 +190,7 @@
     opacity: 0.9;
 }
 
-/* ========== НИЖНИЕ КАРТОЧКИ (картинка заходит на поля) ========== */
+/* Нижние карточки */
 .cert-cards-row {
     display: flex;
     gap: 24px;
@@ -231,7 +226,6 @@
     margin-bottom: 48px;
 }
 
-/* ИСПРАВЛЕНО: изображение видно полностью, не обрезается */
 .cert-small-right {
     width: 200px;
     height: 100%;
@@ -251,13 +245,13 @@
 
 .cert-small-right img {
     width: 100%;
-    height: auto;  /* Изменено с 100% на auto */
-    max-height: 100%; /* Добавлено - ограничиваем по высоте контейнера */
-    object-fit: contain; /* Изменено с cover на contain */
+    height: auto;  
+    max-height: 100%; 
+    object-fit: contain; 
     border-radius: 0 32px 32px 0;
 }
 
-/* ========== МОБИЛЬНАЯ ВЕРСИЯ ========== */
+/* Мобильная версия */
 .certificates-mobile {
     display: none;
     overflow: hidden;
@@ -296,7 +290,6 @@
     pointer-events: auto;
 }
 
-/* Цвета для мобильных карточек */
 .cert-mobile-card[data-mobile-color="0"] {
     background-color: #2C4A61;
     color: #FFFFFF;
