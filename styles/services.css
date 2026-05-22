@@ -51,21 +51,37 @@
 /* Фильтры */
 .filters-section {
     padding-bottom: 40px;
+    position: relative;
+    z-index: 10;
 }
 
-@media (max-width: 768px) {
-    .filters-container {
-        margin: 0 16px;
-    }
-}
-
-
-/* Фильтры по тегам */
+/* Фильтры по тегам - горизонтальный скролл на мобильных */
 .filters-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
     margin-bottom: 24px;
+}
+
+/* На мобильных делаем скролл без полосы */
+@media (max-width: 768px) {
+    .filters-tags {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: visible;
+        gap: 12px;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    .filters-tags::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
 }
 
 .filter-tag {
@@ -78,6 +94,7 @@
     padding: 8px 24px;
     border-radius: 40px;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .filter-tag:hover {
@@ -94,12 +111,44 @@
     display: flex;
     gap: 32px;
     margin-bottom: 24px;
+    position: relative;
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .filters-extra {
+        flex-direction: row;
+        gap: 16px;
+        align-items: center;
+        overflow-x: auto;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding-bottom: 8px;
+        position: static;
+    }
+    
+    .filters-extra::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
 }
 
 .filter-select {
     display: flex;
     align-items: center;
     gap: 16px;
+    flex-shrink: 0;
+    position: static;
+}
+
+@media (max-width: 768px) {
+    .filter-select {
+        flex-shrink: 0;
+        position: static;
+    }
 }
 
 .filter-select-label {
@@ -108,11 +157,16 @@
     white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+    .filter-select-label {
+        font-size: 20px;
+    }
+}
+
 .filter-select-wrapper {
     position: relative;
     background-color: #ffffff;
     border-radius: 40px;
-    
 }
 
 .filter-select-btn {
@@ -130,7 +184,16 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    position: relative;
 }
+
+/* @media (max-width: 768px) {
+    .filter-select-btn {
+        width: 160px;
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+} */
 
 .filter-select-btn::after {
     content: '▼';
@@ -156,12 +219,24 @@
     left: 0;
     background: #FFFFFF;
     border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     width: 208px;
     margin-top: 8px;
-    overflow: hidden;
-    z-index: 100;
+    overflow: visible;
+    z-index: 10000;
     display: none;
+}
+
+@media (max-width: 768px) {
+    .filter-dropdown {
+        position: fixed;
+        top: auto;
+        left: auto;
+        width: 160px;
+        margin-top: 0;
+        z-index: 10001;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
 }
 
 .filter-dropdown.active {
@@ -175,31 +250,20 @@
     color: #2C3E2B;
     cursor: pointer;
     transition: background 0.2s ease;
+    white-space: nowrap;
+}
+
+.filter-dropdown-item:first-child {
+    border-radius: 16px 16px 0 0;
+}
+
+.filter-dropdown-item:last-child {
+    border-radius: 0 0 16px 16px;
 }
 
 .filter-dropdown-item:hover {
     background-color: #ECF0E1;
     color: #6A8366;
-}
-
-@media (max-width: 768px) {
-    .filters-extra {
-        flex-direction: column;
-        gap: 16px;
-        align-items: flex-start;
-    }
-    
-    .filter-select {
-        width: 100%;
-    }
-    
-    .filter-select-btn {
-        max-width: 208px;
-    }
-    
-    .filter-dropdown {
-        max-width: 208px;
-    }
 }
 
 /* услуги */
@@ -216,12 +280,6 @@
 @media (max-width: 768px) {
     .services-section {
         padding: 20px 0 60px 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .services-slider {
-        margin: 0 16px;
     }
 }
 
@@ -277,6 +335,18 @@
     grid-column: span 2;
 }
 
+@media (max-width: 1024px) {
+    .service-card-large-half {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-card-large-half {
+        grid-column: span 1;
+    }
+}
+
 .service-card-large::before, .service-card-large-half::before {
     content: '';
     position: absolute;
@@ -305,8 +375,6 @@
     position: relative;
     z-index: 3;
 }
-
-
 
 /* Первый блок: заголовок и тэги */
 .service-large-header {
@@ -354,17 +422,37 @@
     gap: 16px;
 }
 
+@media (max-width: 1024px) {
+    .service-large-middle {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-large-middle {
+        margin-top: 40px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 .service-large-title-secondary {
     color: #FFFFFF;
     margin: 0;
 }
 
 .service-large-text {
-
     color: #FFFFFF;
     max-width: 600px;
     text-align: left;
     line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .service-large-text {
+        text-align: left;
+        font-size: 12px;
+    }
 }
 
 /* Третий блок: цена, стрелка, время*/
@@ -373,6 +461,13 @@
     align-items: center;
     gap: 24px;
     margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .service-large-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 
 .service-large-price-block {
@@ -435,6 +530,7 @@
     bottom: -5px;
     right: 8px;
 }
+
 .service-large-duration {
     font-family: 'Gilroy', sans-serif;
     font-size: 20px;
@@ -455,6 +551,22 @@
     flex-shrink: 0;
 }
 
+@media (max-width: 1024px) {
+    .service-large-btn {
+        width: 200px;
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-large-btn {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
 .service-large-btn:hover {
     background-color: #2C3E2B;
     transform: translateY(-2px);
@@ -467,20 +579,6 @@
     
     .service-large-title-secondary {
         font-size: 22px;
-    }
-    
-    .service-large-middle {
-        margin-top: 80px;
-    }
-    
-    .service-large-btn {
-        width: 200px;
-        font-size: 16px;
-        padding: 12px 20px;
-    }
-    
-    .service-card-large-half {
-        grid-column: span 1;
     }
 }
 
@@ -503,37 +601,8 @@
         font-size: 12px;
         padding: 6px 12px;
     }
-    
-    .service-large-middle {
-        margin-top: 40px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .service-large-text {
-        text-align: left;
-        font-size: 12px;
-    }
-    
-    .service-large-footer {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .service-large-btn {
-        width: 100%;
-        padding: 12px 20px;
-        font-size: 14px;
-    }
-    
-    .service-card-large-half {
-        grid-column: span 1;
-    }
 }
 
-
-
-/* Карточки */
 /* Обычные карточки */
 .service-card {
     background-color: #FFFFFF;
@@ -552,6 +621,18 @@
     margin-bottom: 32px;
 }
 
+@media (max-width: 1440px) {
+    .service-image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-image {
+        height: 200px;
+    }
+}
+
 .service-image img {
     width: 100%;
     height: 100%;
@@ -567,6 +648,12 @@
     margin-bottom: 72px;
 }
 
+@media (max-width: 768px) {
+    .service-info {
+        margin-bottom: 40px;
+    }
+}
+
 .service-tag {
     display: inline-block;
     background-color: #ECF0E0;
@@ -578,12 +665,17 @@
     margin-bottom: 24px;
 }
 
-
 .service-footer {
     display: flex;
     align-items: center;
     gap: 32px;
     margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .service-footer {
+        gap: 16px;
+    }
 }
 
 .service-price-block {
@@ -594,6 +686,18 @@
 
 .service-price {
     text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .service-price {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-price {
+        font-size: 20px;
+    }
 }
 
 .service-line {
@@ -607,19 +711,7 @@
     text-align: center;
 }
 
-@media (max-width: 1440px) {
-    .service-image {
-        height: 200px;
-    }
-}
-
 @media (max-width: 1024px) {
-    .service-card-title {
-        font-size: 22px;
-    }
-    .service-price {
-        font-size: 20px;
-    }
     .service-btn {
         font-size: 18px;
         padding: 12px 16px;
@@ -627,23 +719,8 @@
 }
 
 @media (max-width: 768px) {
-    .service-image {
-        height: 200px;
-    }
-    .service-card-title {
-        font-size: 20px;
-    }
-    .service-price {
-        font-size: 20px;
-    }
     .service-btn {
         font-size: 16px;
         padding: 12px 16px;
-    }
-    .service-info {
-        margin-bottom: 40px;
-    }
-    .service-footer {
-        gap: 16px;
     }
 }

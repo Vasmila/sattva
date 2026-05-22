@@ -80,6 +80,11 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.master-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
 .master-photo {
     width: 100%;
     height: 470px;
@@ -97,11 +102,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
     transition: transform 0.5s ease;
 }
 
 .master-card:hover .master-photo img {
     transform: scale(1.05);
+    object-position: top;
 }
 
 .master-info {
@@ -140,7 +147,6 @@
 .master-btn:hover span{
     color: #6A8366;
 }
-
 
 .service-large-arrow {
     width: 100%;
@@ -199,7 +205,6 @@
     background-color: #6A8366;
 }
 
-
 /* Модальное окно мастера */
 .master-modal {
     display: none;
@@ -213,6 +218,9 @@
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(4px);
+    overflow-y: auto;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .master-modal.active {
@@ -222,17 +230,30 @@
 .master-modal-content {
     position: relative;
     width: 900px;
-    max-width: 90%;
+    max-width: calc(100% - 48px);
     background-color: #ECF0E0;
     border-radius: 32px;
     padding: 32px;
     box-sizing: border-box;
+    margin: 24px auto;
+    max-height: calc(100% - 48px);
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Скрываем скроллбар для Chrome, Safari и Opera */
+.master-modal-content::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
 }
 
 .master-modal-close {
-    position: absolute;
-    top: 24px;
-    right: 24px;
+    position: sticky;
+    top: 0;
+    right: 0;
+    float: right;
     width: 40px;
     height: 40px;
     background: transparent;
@@ -241,6 +262,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 16px;
+    z-index: 10;
 }
 
 .master-modal-close span {
@@ -263,9 +286,17 @@
     background-color: #6A8366;
 }
 
+/* Очистка float после кнопки закрытия */
+.master-modal-content::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
 .master-modal-header {
     margin-bottom: 56px;
     padding-right: 40px;
+    clear: both;
 }
 
 .master-modal-name {
@@ -278,14 +309,13 @@
 .master-modal-specialty {
     font-family: 'Gilroy', sans-serif;
     font-size: 24px;
-
 }
 
 .master-modal-body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
-    align-items: center;
+    align-items: start;
 }
 
 .master-modal-photo {
@@ -299,9 +329,87 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
 }
 
-@media (max-width: 900px) {
+.master-modal-description {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2C3E2B;
+    margin: 0;
+}
+
+.master-modal-description p {
+    margin: 0 0 12px 0;
+}
+
+.master-modal-description p:last-child {
+    margin-bottom: 0;
+}
+
+/* Стили для планшетной версии (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .master-modal-content {
+        max-width: calc(100% - 48px);
+        padding: 28px;
+        margin: 24px auto;
+    }
+    
+    .master-modal-header {
+        margin-bottom: 40px;
+    }
+    
+    .master-modal-name {
+        font-size: 28px;
+    }
+    
+    .master-modal-specialty {
+        font-size: 18px;
+    }
+    
+    .master-modal-body {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+    
+    /* Квадратное фото на планшетах */
+    .master-modal-photo {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto;
+    }
+    
+    .master-modal-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+    
+    .master-modal-description {
+        font-size: 15px;
+    }
+}
+
+/* Стили для десктопа при маленькой высоте экрана */
+@media (max-height: 800px) {
+    .master-modal-content {
+        padding: 24px;
+    }
+    
+    .master-modal-header {
+        margin-bottom: 32px;
+    }
+    
+    .master-modal-photo {
+        height: 350px;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 769px) {
     .master-modal-name {
         font-size: 32px;
     }
@@ -312,20 +420,46 @@
 }
 
 @media (max-width: 768px) {
+    .master-modal {
+        padding: 0;
+        align-items: flex-start;
+    }
+    
     .master-modal-content {
-        padding: 24px;
-        max-width: calc(100% - 32px);
-        margin: 16px;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 16px;
+        margin: 0;
+        border-radius: 0;
+        max-height: 100vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    
+    /* Скрываем скроллбар на мобильных */
+    .master-modal-content::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
     }
     
     .master-modal-close {
-        top: 20px;
-        right: 20px;
+        position: sticky;
+        top: 0;
+        right: 0;
+        float: right;
+        margin-bottom: 16px;
+        /* background-color: #ECF0E0; */
+        border-radius: 50%;
+        z-index: 100;
     }
     
     .master-modal-header {
         margin-bottom: 32px;
         padding-right: 30px;
+        clear: both;
     }
     
     .master-modal-name {
@@ -343,16 +477,57 @@
     }
     
     .master-modal-photo {
-        height: 300px;
-    }
-    
-    .master-modal-experience {
-        font-size: 16px;
+        height: 500px;
     }
     
     .master-modal-description {
         font-size: 14px;
+        line-height: 1.5;
     }
 }
 
+/* Альбомная ориентация на мобильных */
+@media (max-width: 768px) and (orientation: landscape) {
+    .master-modal-content {
+        padding: 16px;
+    }
+    
+    .master-modal-header {
+        margin-bottom: 16px;
+    }
+    
+    .master-modal-name {
+        font-size: 20px;
+    }
+    
+    .master-modal-body {
+        gap: 16px;
+    }
+    
+    .master-modal-photo {
+        height: 400px;
+    }
+}
 
+/* Для очень маленьких экранов (до 400px) */
+@media (max-width: 400px) {
+    .master-modal-content {
+        padding: 16px 12px;
+    }
+    
+    .master-modal-name {
+        font-size: 20px;
+    }
+    
+    .master-modal-specialty {
+        font-size: 12px;
+    }
+    
+    .master-modal-photo {
+        height: 400px;
+    }
+    
+    .master-modal-description {
+        font-size: 13px;
+    }
+}

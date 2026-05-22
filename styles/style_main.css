@@ -34,6 +34,8 @@
         flex-direction: column;
         justify-content: center;
         margin-top: 120px;
+        margin-left: 16px;
+        margin-right: 16px;
     }
 }
 
@@ -127,6 +129,8 @@
         gap: 32px;
         margin-top: 0;
         margin-bottom: 40px;
+        margin-left: 16px;
+        margin-right: 16px;
     }
 }
 

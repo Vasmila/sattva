@@ -92,14 +92,27 @@
     gap: 24px;
 }
 
+/* На мобильных делаем скролл */
 @media (max-width: 768px) {
     .blog-filters {
         padding-bottom: 56px;
     }
     
+    .blog-filters-container {
+        overflow-x: auto;
+        overflow-y: visible;
+        gap: 12px;
+        padding: 8px 16px 8px 16px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE и Edge */
+    }
     
+    /* Скрываем скроллбар для Chrome, Safari и Opera */
     .blog-filters-container::-webkit-scrollbar {
         display: none;
+        width: 0;
+        height: 0;
     }
 }
 
