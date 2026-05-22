@@ -163,10 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let mobileIsDragging = false;
     let mobileStartX = 0;
+    let mobileStartY = 0;
     let mobileStartTransform = 0;
     let mobileCurrentIndex = 0;
     let mobileCardWidth = 0;
     let mobileGap = 20;
+    let isHorizontalScroll = false; // Флаг для определения направления скролла
 
     function updateMobileCardWidth() {
         const cards = document.querySelectorAll('.cert-mobile-card');
@@ -231,25 +233,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const startDrag = (e) => {
         mobileIsDragging = true;
+        isHorizontalScroll = false;
         mobileStartX = e.type === 'mousedown' ? e.pageX : e.touches[0].pageX;
+        mobileStartY = e.type === 'mousedown' ? e.pageY : e.touches[0].pageY;
         mobileStartTransform = getCurrentTranslateX();
         certMobileTrack.style.transition = 'none';
         certMobileTrack.style.cursor = 'grabbing';
-        e.preventDefault();
     };
     
     const onDrag = (e) => {
         if (!mobileIsDragging) return;
-        e.preventDefault();
+        
         const currentX = e.type === 'mousemove' ? e.pageX : e.touches[0].pageX;
-        const deltaX = currentX - mobileStartX;
-        let newTransform = mobileStartTransform - deltaX;
+        const currentY = e.type === 'mousemove' ? e.pageY : e.touches[0].pageY;
+        const deltaX = Math.abs(currentX - mobileStartX);
+        const deltaY = Math.abs(currentY - mobileStartY);
         
-        const step = mobileCardWidth + mobileGap;
-        const maxTransform = (certificatesData.length - 1) * step;
-        newTransform = Math.max(0, Math.min(newTransform, maxTransform));
+        // Определяем направление скролла после небольшого движения
+        if (!isHorizontalScroll && (deltaX > 5 || deltaY > 5)) {
+            isHorizontalScroll = deltaX > deltaY;
+        }
         
-        certMobileTrack.style.transform = `translateX(-${newTransform}px)`;
+        // Если это горизонтальный скролл - предотвращаем прокрутку страницы
+        if (isHorizontalScroll) {
+            e.preventDefault();
+            const deltaMoveX = currentX - mobileStartX;
+            let newTransform = mobileStartTransform - deltaMoveX;
+            
+            const step = mobileCardWidth + mobileGap;
+            const maxTransform = (certificatesData.length - 1) * step;
+            newTransform = Math.max(0, Math.min(newTransform, maxTransform));
+            
+            certMobileTrack.style.transform = `translateX(-${newTransform}px)`;
+        }
+        // Если вертикальный - ничего не делаем, страница скроллится естественным образом
     };
     
     const endDrag = () => {
@@ -257,11 +274,17 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileIsDragging = false;
         certMobileTrack.style.cursor = 'grab';
         
-        const currentTransform = getCurrentTranslateX();
-        const nearestIndex = getNearestMobileIndex(currentTransform);
+        // Если был горизонтальный скролл - фиксируем позицию
+        if (isHorizontalScroll) {
+            const currentTransform = getCurrentTranslateX();
+            const nearestIndex = getNearestMobileIndex(currentTransform);
+            
+            certMobileTrack.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            scrollToMobileCard(nearestIndex, true);
+        }
         
-        certMobileTrack.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        scrollToMobileCard(nearestIndex, true);
+        // Сбрасываем флаги
+        isHorizontalScroll = false;
     };
 
     function initMobileSlider() {
@@ -311,9 +334,9 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('mousemove', onDrag);
         window.addEventListener('mouseup', endDrag);
         
-        // Добавляем обработчики для тач-событий
-        certMobileTrack.addEventListener('touchstart', startDrag);
-        window.addEventListener('touchmove', onDrag);
+        // Добавляем обработчики для тач-событий (с пассивным слушателем для вертикального скролла)
+        certMobileTrack.addEventListener('touchstart', startDrag, { passive: false });
+        window.addEventListener('touchmove', onDrag, { passive: false });
         window.addEventListener('touchend', endDrag);
         
         // Защита от выделения текста
