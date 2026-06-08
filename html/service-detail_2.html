@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Тайский массаж для тела | Массажный салон</title>
+    <title>Аромарелакс массаж</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/style_main.css">
     <link rel="stylesheet" href="../styles/service-detail.css">
@@ -11,10 +11,10 @@
 </head>
 <body>
     <!-- Первый экран-->
-    <section class="service-hero service-hero-2">
+    <div class="service-hero service-hero-2">
         <div class="service-hero-outer">
             <nav class="navbar">
-                <img src="../img/logo.png" class="logo" alt="Логотип" id="mainLogo">
+                <a href="../index.html"><img src="../img/logo.png" class="logo" alt="Логотип" id="mainLogo"></a>
                 <ul class="nav-links">
                     <li><a href="../index.html">Главная</a></li>
                     <li><a href="services.html">Услуги</a></li>
@@ -28,19 +28,20 @@
                 </button>
             </nav>
 
-            <!-- Фото для мобильной версии -->
-            <div class="service-hero-mobile-image">
-                <img src="../img/mas_1.png" alt="Тайский массаж">
-            </div>
-
-            <div class="service-hero-text-block">
-                <div class="service-hero-content">
-                    <h2 class="service-hero-title">Аромарелакс<br>массаж</h2>
+            <!-- Контент -->
+            <div class="service-hero-content">
+                <!-- Фото для мобильной версии - перенесено внутрь контента -->
+                <div class="service-hero-mobile-image">
+                    <img src="../img/mas_1.png">
+                </div>
+                
+                <div class="service-hero-text-block">
+                    <h2 class="service-hero-title">Аромарелакс-массаж</h2>
                     <div class="service-hero-tag">Массаж тела</div>
                     
                     <div class="service-hero-footer">
                         <div class="service-hero-price-block">
-                            <span class="service-hero-price">4 500 ₽</span>
+                            <span class="service-hero-price">2 200 ₽</span>
                             <div class="service-hero-arrow">
                                 <div class="service-hero-arrow-line"></div>
                                 <div class="service-hero-arrow-fork"></div>
@@ -51,8 +52,9 @@
                     </div>
                 </div>
             </div>
+
         </div>
-    </section>
+    </div>
 
     <!-- Блок с информацией -->
     <section class="service-info-section">
@@ -109,100 +111,102 @@
         
         <div class="services-slider">
             <div class="services-track" id="servicesTrack">
-                <!-- Карточка услуги 1 -->
-                <div class="service-card" data-tag="massage" data-time="60" data-price="2500">
-                    <div class="service-image">
-                        <img src="../img/mas_2.png">
-                    </div>
-                    <div class="service-info">
-                        <div class="service-tag">Массаж тела</div>
-                        <h4>Классический массаж тела</h4>
-                    </div>
-                    <div class="service-footer">
-                        <div class="service-price-block">
-                            <h4 class="service-price">2500 ₽</h4>
-                            <div class="service-line"></div>
-                            <p class="service-duration">60 минут</p>
-                        </div>
-                        <a href="#" class="service-btn" onclick="openBookingModal(); return false;">Записаться</a>
-                    </div>
+
+                    <!-- Карточка услуги 1  -->
+            <div class="service-card" data-tag="massage" data-time="60" data-price="1800">
+                <div class="service-image">
+                    <img src="../img/mas_2.png">
                 </div>
-                
-                <!-- Карточка услуги 2 -->
-                <div class="service-card" data-tag="face" data-time="60" data-price="2500">
-                    <div class="service-image">
-                        <img src="../img/mas_3.png">
-                    </div>
-                    <div class="service-info">
-                        <div class="service-tag">Уход за лицом</div>
-                        <h4>Классический массаж лица</h4>
-                    </div>
-                    <div class="service-footer">
-                        <div class="service-price-block">
-                            <h4 class="service-price">2500 ₽</h4>
-                            <div class="service-line"></div>
-                            <p class="service-duration">60 минут</p>
-                        </div>
-                        <a href="#" class="service-btn" onclick="openBookingModal(); return false;">Записаться</a>
-                    </div>
+                <div class="service-info">
+                    <div class="service-tag">Массаж тела</div>
+                    <h4>Классический массаж тела</h4>
                 </div>
-                
-                <!-- Карточка услуги 3 -->
-                <div class="service-card" data-tag="spa" data-time="60" data-price="2500">
-                    <div class="service-image">
-                        <img src="../img/mas_5.png">
+                <div class="service-footer">
+                    <div class="service-price-block">
+                        <h4 class="service-price">1 800 ₽</h4>
+                        <div class="service-line"></div>
+                        <p class="service-duration">60 минут</p>
                     </div>
-                    <div class="service-info">
-                        <div class="service-tag">SPA-ритуал</div>
-                        <h4>SPA-ритуал «Морские водоросли»</h4>
-                    </div>
-                    <div class="service-footer">
-                        <div class="service-price-block">
-                            <h4 class="service-price">2500 ₽</h4>
-                            <div class="service-line"></div>
-                            <p class="service-duration">60 минут</p>
-                        </div>
-                        <a href="#" class="service-btn" onclick="openBookingModal(); return false;">Записаться</a>
-                    </div>
+                    <a href="service-detail.html" class="service-btn">Подробнее</a>
                 </div>
-                
-                <!-- Карточка услуги 4 -->
-                <div class="service-card" data-tag="spa" data-time="60" data-price="2500">
-                    <div class="service-image">
-                        <img src="../img/mas_7.png">
-                    </div>
-                    <div class="service-info">
-                        <div class="service-tag">SPA-ритуал</div>
-                        <h4>SPA-ритуал «Полное погружение»</h4>
-                    </div>
-                    <div class="service-footer">
-                        <div class="service-price-block">
-                            <h4 class="service-price">2500 ₽</h4>
-                            <div class="service-line"></div>
-                            <p class="service-duration">60 минут</p>
-                        </div>
-                        <a href="#" class="service-btn" onclick="openBookingModal(); return false;">Записаться</a>
-                    </div>
+            </div>
+            
+            <!-- Карточка услуги 2  -->
+            <div class="service-card" data-tag="face" data-time="60" data-price="1800">
+                <div class="service-image">
+                    <img src="../img/mas_3.png">
                 </div>
-                
-                <!-- Карточка услуги 5 -->
-                <div class="service-card" data-tag="massage" data-time="60" data-price="2500">
-                    <div class="service-image">
-                        <img src="../img/mas_8.png">
-                    </div>
-                    <div class="service-info">
-                        <div class="service-tag">Массаж тела</div>
-                        <h4>Восточный массаж</h4>
-                    </div>
-                    <div class="service-footer">
-                        <div class="service-price-block">
-                            <h4 class="service-price">2500 ₽</h4>
-                            <div class="service-line"></div>
-                            <p class="service-duration">60 минут</p>
-                        </div>
-                        <a href="#" class="service-btn" onclick="openBookingModal(); return false;">Записаться</a>
-                    </div>
+                <div class="service-info">
+                    <div class="service-tag">Уход за лицом</div>
+                    <h4>Классический массаж лица</h4>
                 </div>
+                <div class="service-footer">
+                    <div class="service-price-block">
+                        <h4 class="service-price">1 800 ₽</h4>
+                        <div class="service-line"></div>
+                        <p class="service-duration">60 минут</p>
+                    </div>
+                    <a href="service-detail_2.html" class="service-btn">Подробнее</a>
+                </div>
+            </div>
+            
+            <!-- Карточка услуги 3 -->
+            <div class="service-card" data-tag="massage" data-time="120" data-price="3500">
+                <div class="service-image">
+                    <img src="../img/mas_4.png">
+                </div>
+                <div class="service-info">
+                    <div class="service-tag">Массаж тела</div>
+                    <h4>Массаж с горячим песком и солью</h4>
+                </div>
+                <div class="service-footer">
+                    <div class="service-price-block">
+                        <h4 class="service-price">3 500 ₽</h4>
+                        <div class="service-line"></div>
+                        <p class="service-duration">120 минут</p>
+                    </div>
+                    <a href="service-detail.html" class="service-btn">Подробнее</a>
+                </div>
+            </div>
+            
+            <!-- Карточка услуги 4  -->
+            <div class="service-card" data-tag="spa" data-time="180" data-price="3000">
+                <div class="service-image">
+                    <img src="../img/mas_5.png">
+                </div>
+                <div class="service-info">
+                    <div class="service-tag">SPA-ритуал</div>
+                    <h4>SPA-ритуал «Морские водоросли»</h4>
+                </div>
+                <div class="service-footer">
+                    <div class="service-price-block">
+                        <h4 class="service-price">3 000 ₽</h4>
+                        <div class="service-line"></div>
+                        <p class="service-duration">180 минут</p>
+                    </div>
+                    <a href="service-detail.html" class="service-btn">Подробнее</a>
+                </div>
+            </div>
+
+            <!-- Карточка услуги 5 -->
+            <div class="service-card" data-tag="spa" data-time="240" data-price="6000">
+                <div class="service-image">
+                    <img src="../img/mas_7.png">
+                </div>
+                <div class="service-info">
+                    <div class="service-tag">SPA-ритуал</div>
+                    <h4>SPA-ритуал «Полное погружение»</h4>
+                </div>
+                <div class="service-footer">
+                    <div class="service-price-block">
+                        <h4 class="service-price">6 000 ₽</h4>
+                        <div class="service-line"></div>
+                        <p class="service-duration">240 минут</p>
+                    </div>
+                    <a href="service-detail.html" class="service-btn">Подробнее</a>
+                </div>
+            </div>
+        
             </div>
         </div>
         
