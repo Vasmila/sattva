@@ -1,58 +1,10 @@
-/* Первый экран */
-.services-hero-outer {
-    background-image: url('../img/bg-services.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 40px;
-    border-radius: 32px;
-    position: relative;
-    height: 460px;
-    display: flex;
-    flex-direction: column;
-}
-@media (max-width: 768px) {
-    .services-hero-outer {
-        margin: 16px;
-        margin-bottom: 16px;
-        border-radius: 24px;
-        height: 350px;
-        background: #32412E;
-    }
-}
-
-.services-hero-title {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding-left: 115px;
-    text-align: left;
-}
-@media (max-width: 768px) {
-    .services-hero-title {
-        padding-left: 0px;
-        text-align: center;
-        justify-content: center;
-    }
-}
-
-.hero_page {
-    background: transparent;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 120px;
-}
-@media (max-width: 768px) {
-    .hero_page {
-        margin-bottom: 64px;
-    }
-}
 
 /* Фильтры */
 .filters-section {
     padding-bottom: 40px;
     position: relative;
     z-index: 10;
+    margin-bottom: 0;
 }
 
 /* Фильтры по тегам - горизонтальный скролл на мобильных */
@@ -97,9 +49,9 @@
     white-space: nowrap;
 }
 
-.filter-tag:hover {
+/* .filter-tag:hover {
     transform: translateY(-2px);
-}
+} */
 
 .filter-tag.active {
     background-color: #6A8366;
@@ -187,13 +139,6 @@
     position: relative;
 }
 
-/* @media (max-width: 768px) {
-    .filter-select-btn {
-        width: 160px;
-        padding: 12px 16px;
-        font-size: 16px;
-    }
-} */
 
 .filter-select-btn::after {
     content: '▼';
@@ -271,7 +216,7 @@
     background-color: #ECF0E1;
 }
 
-@media (max-width: 1440px) {
+/* @media (max-width: 1440px) {
     .services-section {
         padding: 20px 0 80px 0;
     }
@@ -281,7 +226,7 @@
     .services-section {
         padding: 20px 0 60px 0;
     }
-}
+} */
 
 .services-track {
     display: grid;
@@ -482,6 +427,7 @@
     font-family: 'GilroySemibold', sans-serif;
     font-size: 24px;
     color: #FFFFFF;
+    white-space: nowrap;
 }
 
 .service-large-arrow {
@@ -535,6 +481,7 @@
     font-family: 'Gilroy', sans-serif;
     font-size: 20px;
     color: #FFFFFF;
+    white-space: nowrap;
 }
 
 .service-large-btn {
@@ -686,6 +633,7 @@
 
 .service-price {
     text-align: center;
+    white-space: nowrap;
 }
 
 @media (max-width: 1024px) {
@@ -709,6 +657,7 @@
 
 .service-duration {
     text-align: center;
+    white-space: nowrap;
 }
 
 @media (max-width: 1024px) {

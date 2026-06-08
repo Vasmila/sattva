@@ -1,3 +1,48 @@
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* Первый экран  */
+.hero {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+.hero-outer {
+    background-image: url('../img/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 40px;
+    border-radius: 32px;
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 1024px) {
+    .hero-outer {
+        margin: 24px;
+    }
+}
+@media (max-width: 768px) {
+    .hero {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
+        padding-bottom: 0;
+    }
+    .hero-outer {
+        margin: 16px;
+        margin-bottom: 0;
+        border-radius: 24px 24px 0 0;
+        min-height: auto;
+        flex: 1;
+        border-radius: 24px !important;
+    }
+}
+
 /* Первый экран */
 .hero-content {
     margin: 0px 120px;
@@ -134,15 +179,44 @@
     }
 }
 
+.btn-primary {
+    background: #6A8366;
+    border: none;
+    padding: 24px 20px;
+    font: 24px GilroyMedium, sans-serif;
+    color: #ffffff;
+    border-radius: 48px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    grid-column: span 3;
+    width: 100%;
+    min-width: 0;
+}
+
 .inline-note {
     font-weight: 300;
     color: #ffffff;
     padding: 6px 0;
     border-radius: 40px;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     grid-column: span 6;
     text-align: right;
 }
+
+@media (max-width: 1024px) {
+    .btn-primary {
+        grid-column: span 4;
+    }
+    .inline-note {
+        grid-column: span 5;
+}
+}
+
 
 @media (max-width: 768px) {
     .inline-note {
@@ -150,43 +224,14 @@
         white-space: normal;
         font-size: 16px;
     }
-}
-
-@media (max-width: 768px) {
-    body {
+     body {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
     }
 }
 
-.site-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
 
-@media (max-width: 768px) {
-    .hero {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-    
-    .hero-outer {
-        margin: 16px;
-        margin-bottom: 0;
-        border-radius: 24px 24px 0 0;
-        min-height: auto;
-        flex: 1;
-        border-radius: 24px !important;
-    }
-    .hero {
-        margin-bottom: 16px;
-    }
-}
 /* Инфорграфика */
 .about-container {
     flex: 1;
@@ -209,7 +254,7 @@
 }
 @media (max-width: 1024px) {
     .about-image {
-        grid-column: 2 / 5;
+        grid-column: 1 / 4;
     }
 }
 @media (max-width: 768px) {
@@ -236,9 +281,6 @@
     display: block;
     transition: transform 0.4s ease;
 }
-.about-image:hover img {
-    transform: scale(1.03);
-}
 
 .about-text {
     grid-column: 5 / 12;
@@ -250,7 +292,7 @@
 
 @media (max-width: 1024px) {
     .about-text {
-        grid-column: 5 / 12;
+        grid-column: 5 / 13;
         height: auto;
         gap: 40px;
     }
@@ -384,10 +426,7 @@
     justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
+
 @media (max-width: 768px) {
     .feature-card {
         min-width: 284px;
@@ -640,7 +679,6 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 64px;
 }
 
 .services-title {
@@ -728,6 +766,7 @@
 }
 .service-price {
     text-align: center;
+    white-space: nowrap;
 }
 .service-line {
     width: 100%;
@@ -779,7 +818,7 @@
 
 @media (max-width: 768px) {
     .services-header {
-        margin-bottom: 32px;
+        margin-bottom: 0px;
     }
     .services-link {
         font-size: 16px;
@@ -820,11 +859,7 @@
 /* Вопросы */
 .faq-section {
     background-color: #ECF0E1;
-    padding-bottom: 120px;
-}
-
-.faq-section h3 {
-    margin-bottom: 48px;
+    /* padding-bottom: 120px; */
 }
 
 .faq-container {

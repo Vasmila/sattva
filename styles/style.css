@@ -19,7 +19,6 @@
     src: url('../other_files/Gilroy-RegularItalic_0.ttf') format('opentype');
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -56,19 +55,22 @@ h5{
 }
 
 section{
-    margin: 0 40px ;
-    padding: 0 120px;
+    /* margin: 0 40px ;
+    padding: 0 120px; */
+    padding: 0 40px;
+    max-width: 1680px;
+    margin: 0 auto;
     padding-bottom: 120px
 }
 @media (max-width: 1440px) {
     section{
-        padding: 0 0;
+        /* padding: 0 40; */
         padding-bottom: 80px
     }
 }
 @media (max-width: 1024px) {
     section{
-        padding: 0 0;
+        /* padding: 0 0; */
         padding-top: 16px;
         padding-bottom: 80px
     }
@@ -86,10 +88,19 @@ section{
     h4{
         font: 20px GilroyMedium, sans-serif;
     }
+    h5{
+        font: 32px ChampagneLimousines, sans-serif;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: 4%;
+}
+
 }
 @media (max-width: 768px) {
     section{
+        padding: 0;
         margin: 0 16px ;
+        margin-bottom: 64px;
     }
     h1 {
         font: 40px ChampagneLimousines, sans-serif;
@@ -98,34 +109,83 @@ section{
     h2{
         font: 32px GilroyMedium, sans-serif;
     }
+    h3{
+        margin-bottom: 32px;
+    }
 }
 
-/* Первый экран  */
-.hero {
-    background: transparent;
-    margin: 0;
-    padding: 0;
-}
-.hero-outer {
-    background-image: url('../img/bg.png');
+/* Первый экран */
+.page-hero-outer {
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     margin: 40px;
     border-radius: 32px;
     position: relative;
-    min-height: 92vh;
+    height: 460px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 120px;
+}
+@media (max-width: 768px) {
+    .page-hero-outer {
+        margin: 16px;
+        border-radius: 24px;
+        height: 350px;
+        margin-bottom: 64px;
+    }
+    
 }
 
+.page-hero-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 115px;
+    text-align: left;
+}
 @media (max-width: 768px) {
-    .hero-outer {
-        margin: 16px;
-        margin-bottom: 16px;
-        border-radius: 24px;
-        min-height: calc(90vh - 16px);
+    .page-hero-title {
+        padding-left: 0px;
+        text-align: center;
+        justify-content: center;
     }
 }
+
+/* Фоновые изображения */
+.page-hero-outer1 {
+    background-image: url('../img/bg-services.png');
+}
+.page-hero-outer2 {
+    background-image: url('../img/bg-masters.png');
+}
+.page-hero-outer3 {
+    background-image: url('../img/bg-about.png');
+}
+.page-hero-outer4 {
+    background-image: url('../img/bg-blog.png');
+}
+.page-hero-outer5 {
+    background-image: url('../img/bg-services.png');
+}
+@media (max-width: 768px) {
+    .page-hero-outer1 {
+        background: #32412E;
+    }
+    .page-hero-outer2 {
+        background: #6A8366;
+    }
+    .page-hero-outer3 {
+        background: #2C4A61;
+    }
+    .page-hero-outer4 {
+        background: #974315;
+    }
+    .page-hero-outer5 {
+        background: #32412E;
+    }
+}
+
 
 /* Навигационное меню */
 .navbar {
@@ -275,16 +335,16 @@ section{
     background-color: #2C3E2B;
 }
 
-
 /* Футер */
 .footer {
     background-image: url('../img/foot.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    margin: 40px 160px 40px 160px;
     border-radius: 32px;
     padding: 56px;
+    margin: 0 40px 40px 40px;
+    
 }
 @media (max-width: 1440px) {
     .footer{
@@ -407,12 +467,19 @@ section{
 }
 
 .form-group input:focus {
-    box-shadow: 0 0 0 2px #6A8366;
+    border-color: #2C3E2B;
 }
 
 .form-group input::placeholder {
-    color: rgba(44, 62, 43, 0.5);
+    color: #2C3E2B;
 }
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus,
+.form-group input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+}
+
 
 .footer-submit-btn {
     margin-top: 32px;
@@ -433,7 +500,6 @@ section{
 
 .footer-submit-btn:hover {
     background-color: #FFFFFF;
-    color: #6A8366;
 }
 
 @media (max-width: 1024px) {
@@ -541,7 +607,6 @@ section{
 }
 
 /* Кнопки */
-
 .btn-primary {
     background: #6A8366;
     border: none;

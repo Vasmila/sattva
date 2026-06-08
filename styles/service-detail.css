@@ -3,19 +3,19 @@
     background: transparent;
     margin: 0;
     padding: 0;
+    margin-bottom: 120px;
 }
 
 .service-hero-outer {
-    background-image: url('../img/service-detail-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     margin: 40px;
     border-radius: 32px;
     position: relative;
-    min-height: 80vh;
     display: flex;
     flex-direction: column;
+    max-width: 1900px;
 }
 
 .service-hero-1 .service-hero-outer {
@@ -25,39 +25,18 @@
     background-image: url('../img/service-detail-bg3.png');
 }
 
-
 @media (max-width: 768px) {
-    .service-hero-1 .service-hero-outer,
-    .service-hero-2 .service-hero-outer {
+    .service-hero-outer {
         margin: 16px;
         margin-bottom: 16px;
         border-radius: 24px;
         background-image: none;
         background-color: transparent;
-        min-height: auto;
         padding: 0;
     }
-}
-
-.service-hero-outer > * {
-    position: relative;
-}
-
-@media (max-width: 768px) {
-    .service-hero-outer .navbar {
-        background-color: transparent;
-        border-radius: 0;
-        margin: 0;
-        padding: 20px 0;
-        width: 100%;
-    }
-    
-    .service-hero-outer .burger span {
-        background-color: #000000;
-    }
-    
-    .service-hero-outer .logo {
-        filter: none;
+    .service-hero-2 .service-hero-outer,
+    .service-hero-1 .service-hero-outer{
+        background-image: none;
     }
 }
 
@@ -80,15 +59,13 @@
     .service-hero-content {
         padding: 0;
         gap: 0;
-        background-color: transparent;
-        margin: 0;
-        width: 100%;
         display: flex;
         flex-direction: column;
     }
 }
 
-/* Картинка после навигации на мобильной версии */
+/* Фото для мобильной версии */
+
 .service-hero-mobile-image {
     display: none;
 }
@@ -99,8 +76,7 @@
         width: 100%;
         height: 200px;
         overflow: hidden;
-        border-radius: 16px 16px 24px 24px;
-        margin-top: 0;
+        border-radius: 16px;
     }
     
     .service-hero-mobile-image img {
@@ -110,25 +86,26 @@
     }
 }
 
+/* Текстовый блок */
 .service-hero-text-block {
-    display: contents;
+    grid-column: 2 / 12;
 }
 
 @media (max-width: 768px) {
     .service-hero-text-block {
-        display: block;
         background-color: #ECF0E1;
-        padding: 40px 0px 40px 0px;
+        padding: 40px 16px 40px 16px;
         border-radius: 0 0 24px 24px;
+        margin-top: 0px; /* Добавлено - убираем лишний отступ */
     }
 }
 
 .service-hero-title {
     color: #FFFFFF;
-    grid-column: 2 / 12;
     margin: 0;
     margin-top: 120px;
-
+    margin-bottom: 24px;
+    line-height: 1.2;
 }
 
 @media (max-width: 1024px) {
@@ -143,7 +120,6 @@
         font-size: 32px;
         margin-top: 0;
         margin-bottom: 16px;
-        text-align: left;
         color: #000000;
     }
 }
@@ -156,37 +132,34 @@
     display: inline-block;
     padding: 8px 16px;
     border-radius: 32px;
-    grid-column: 2 / 12;
     width: fit-content;
-    height: 35px;
+    margin: 0;
+    margin-bottom: 100px;
 }
 
 @media (max-width: 768px) {
     .service-hero-tag {
-    color: #ffffff;
-    background-color: #2C4A61;  
+        color: #ffffff;
+        background-color: #2C4A61;
         margin-bottom: 56px;
-
     }
 }
 
-/* Нижний блок с ценой и кнопкой */
+/* Нижний блок */
 .service-hero-footer {
-    grid-column: 2 / 12;
     display: flex;
     align-items: center;
     gap: 24px;
-    margin-top: 100px;
     flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {
     .service-hero-footer {
-        display: flex;
         flex-direction: column;
         align-items: stretch;
-        margin-top: 0;
         gap: 20px;
+        margin-bottom: 0; /* Добавлено - убираем нижний отступ */
+        padding-bottom: 0; /* Добавлено - убираем нижний отступ */
     }
 }
 
@@ -194,7 +167,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border-radius: 60px;
     flex: 1;
 }
 
@@ -211,7 +183,6 @@
     }
 }
 
-/* Стрелка */
 .service-hero-arrow {
     width: 100%;
     height: 32px;
@@ -225,7 +196,6 @@
     width: 100%;
     height: 1px;
     background-color: #FFFFFF;
-    position: relative;
 }
 
 @media (max-width: 768px) {
@@ -285,13 +255,11 @@
     }
 }
 
-/* Кнопка */
 .btn-primary {
     width: 33%;
     flex-shrink: 0;
     box-sizing: border-box;
 }
-
 
 @media (max-width: 768px) {
     .btn-primary {
@@ -299,11 +267,28 @@
     }
 }
 
+/* Убираем лишнее пространство после нижнего блока на мобильных */
+@media (max-width: 768px) {
+    .service-hero {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .service-hero-outer {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .service-hero-content {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}
 
 /* Текст 2 колонки */
-.service-info-section {
+/* .service-info-section {
     margin: 80px 40px;
-}
+} */
 
 @media (max-width: 768px) {
     .service-info-section {
